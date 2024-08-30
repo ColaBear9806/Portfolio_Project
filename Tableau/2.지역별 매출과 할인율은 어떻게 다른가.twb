@@ -1,0 +1,3021 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20233.24.0709.0401                               -->
+<workbook original-version='18.1' source-build='2023.3.8 (20233.24.0709.0401)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <_.fcp.AnimationOnByDefault.true...AnimationOnByDefault />
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <_.fcp.AnimationOnByDefault.false...style>
+    <_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule element='animation'>
+      <_.fcp.AnimationOnByDefault.false...format attr='animation-on' value='ao-on' />
+    </_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule>
+  </_.fcp.AnimationOnByDefault.false...style>
+  <datasources>
+    <datasource hasconnection='false' inline='true' name='Parameters' version='18.1'>
+      <aliases enabled='yes' />
+      <column caption='수익 구간차원 크기' datatype='integer' name='[Parameter 1]' param-domain-type='range' role='measure' type='quantitative' value='200'>
+        <calculation class='tableau' formula='200' />
+        <range granularity='50' max='200' min='50' />
+      </column>
+      <column caption='상위 고객' datatype='integer' name='[Parameter 2]' param-domain-type='range' role='measure' type='quantitative' value='5'>
+        <calculation class='tableau' formula='5' />
+        <range granularity='5' max='20' min='5' />
+      </column>
+    </datasource>
+    <datasource inline='true' name='슈퍼스토어 - 샘플' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection name='대형슈퍼 - 샘플leaf'>
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='C:/Users/gijon/Documents/내 Tableau 리포지토리/데이터 원본/2023.3/ko_KR-APAC/슈퍼스토어 - 샘플.xls' interpretationMode='0' password='' server='' validate='no' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='대형슈퍼 - 샘플leaf' name='반품 정리' table='[&apos;반품 정리$&apos;]' type='table'>
+          <columns gridOrigin='A1:B787:no:A1:B787:0' header='yes' outcome='6'>
+            <column datatype='string' name='주문 ID' ordinal='0' />
+            <column datatype='string' name='반품' ordinal='1' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation type='collection'>
+          <relation connection='대형슈퍼 - 샘플leaf' name='주문' table='[주문$]' type='table'>
+            <columns gridOrigin='A1:T10934:no:A1:T10934:0' header='yes' outcome='6'>
+              <column datatype='integer' name='행 ID' ordinal='0' />
+              <column datatype='string' name='주문 ID' ordinal='1' />
+              <column datatype='date' name='주문 날짜' ordinal='2' />
+              <column datatype='date' name='배송 날짜' ordinal='3' />
+              <column datatype='string' name='배송 형태' ordinal='4' />
+              <column datatype='string' name='고객 ID' ordinal='5' />
+              <column datatype='string' name='고객 이름' ordinal='6' />
+              <column datatype='string' name='세그먼트' ordinal='7' />
+              <column datatype='string' name='도시' ordinal='8' />
+              <column datatype='string' name='시/도' ordinal='9' />
+              <column datatype='string' name='국가/지역' ordinal='10' />
+              <column datatype='string' name='지역' ordinal='11' />
+              <column datatype='string' name='제품 ID' ordinal='12' />
+              <column datatype='string' name='범주' ordinal='13' />
+              <column datatype='string' name='하위 범주' ordinal='14' />
+              <column datatype='string' name='제품 이름' ordinal='15' />
+              <column datatype='real' name='매출' ordinal='16' />
+              <column datatype='integer' name='수량' ordinal='17' />
+              <column datatype='real' name='할인율' ordinal='18' />
+              <column datatype='real' name='수익' ordinal='19' />
+            </columns>
+          </relation>
+          <relation connection='대형슈퍼 - 샘플leaf' name='반품 정리' table='[&apos;반품 정리$&apos;]' type='table'>
+            <columns gridOrigin='A1:B787:no:A1:B787:0' header='yes' outcome='6'>
+              <column datatype='string' name='주문 ID' ordinal='0' />
+              <column datatype='string' name='반품' ordinal='1' />
+            </columns>
+          </relation>
+          <relation connection='대형슈퍼 - 샘플leaf' name='인력' table='[인력$]' type='table'>
+            <columns gridOrigin='A1:B5:no:A1:B5:0' header='yes' outcome='6'>
+              <column datatype='string' name='사람' ordinal='0' />
+              <column datatype='string' name='지역' ordinal='1' />
+            </columns>
+          </relation>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <cols>
+          <map key='[고객 ID]' value='[주문].[고객 ID]' />
+          <map key='[고객 이름]' value='[주문].[고객 이름]' />
+          <map key='[국가/지역]' value='[주문].[국가/지역]' />
+          <map key='[도시]' value='[주문].[도시]' />
+          <map key='[매출]' value='[주문].[매출]' />
+          <map key='[반품]' value='[반품 정리].[반품]' />
+          <map key='[배송 날짜]' value='[주문].[배송 날짜]' />
+          <map key='[배송 형태]' value='[주문].[배송 형태]' />
+          <map key='[범주]' value='[주문].[범주]' />
+          <map key='[사람]' value='[인력].[사람]' />
+          <map key='[세그먼트]' value='[주문].[세그먼트]' />
+          <map key='[수량]' value='[주문].[수량]' />
+          <map key='[수익]' value='[주문].[수익]' />
+          <map key='[시/도]' value='[주문].[시/도]' />
+          <map key='[제품 ID]' value='[주문].[제품 ID]' />
+          <map key='[제품 이름]' value='[주문].[제품 이름]' />
+          <map key='[주문 ID (반품 정리)]' value='[반품 정리].[주문 ID]' />
+          <map key='[주문 ID]' value='[주문].[주문 ID]' />
+          <map key='[주문 날짜]' value='[주문].[주문 날짜]' />
+          <map key='[지역 (인력)]' value='[인력].[지역]' />
+          <map key='[지역]' value='[주문].[지역]' />
+          <map key='[하위 범주]' value='[주문].[하위 범주]' />
+          <map key='[할인율]' value='[주문].[할인율]' />
+          <map key='[행 ID]' value='[주문].[행 ID]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[주문]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:T10934:no:A1:T10934:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>6</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[반품 정리]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:B787:no:A1:B787:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>6</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[인력]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:B5:no:A1:B5:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>6</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>행 ID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[행 ID]</local-name>
+            <parent-name>[주문]</parent-name>
+            <remote-alias>행 ID</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[주문_97625591CA484D7B94DC4BD2916A9746]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>주문 ID</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[주문 ID]</local-name>
+            <parent-name>[주문]</parent-name>
+            <remote-alias>주문 ID</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LKO_RKR_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[주문_97625591CA484D7B94DC4BD2916A9746]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>주문 날짜</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[주문 날짜]</local-name>
+            <parent-name>[주문]</parent-name>
+            <remote-alias>주문 날짜</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;DATE&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[주문_97625591CA484D7B94DC4BD2916A9746]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>배송 날짜</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[배송 날짜]</local-name>
+            <parent-name>[주문]</parent-name>
+            <remote-alias>배송 날짜</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;DATE&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[주문_97625591CA484D7B94DC4BD2916A9746]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>배송 형태</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[배송 형태]</local-name>
+            <parent-name>[주문]</parent-name>
+            <remote-alias>배송 형태</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LKO_RKR_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[주문_97625591CA484D7B94DC4BD2916A9746]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>고객 ID</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[고객 ID]</local-name>
+            <parent-name>[주문]</parent-name>
+            <remote-alias>고객 ID</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LKO_RKR_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[주문_97625591CA484D7B94DC4BD2916A9746]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>고객 이름</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[고객 이름]</local-name>
+            <parent-name>[주문]</parent-name>
+            <remote-alias>고객 이름</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LKO_RKR_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[주문_97625591CA484D7B94DC4BD2916A9746]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>세그먼트</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[세그먼트]</local-name>
+            <parent-name>[주문]</parent-name>
+            <remote-alias>세그먼트</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LKO_RKR_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[주문_97625591CA484D7B94DC4BD2916A9746]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>도시</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[도시]</local-name>
+            <parent-name>[주문]</parent-name>
+            <remote-alias>도시</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LKO_RKR_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[주문_97625591CA484D7B94DC4BD2916A9746]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>시/도</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[시/도]</local-name>
+            <parent-name>[주문]</parent-name>
+            <remote-alias>시/도</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LKO_RKR_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[주문_97625591CA484D7B94DC4BD2916A9746]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>국가/지역</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[국가/지역]</local-name>
+            <parent-name>[주문]</parent-name>
+            <remote-alias>국가/지역</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LKO_RKR_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[주문_97625591CA484D7B94DC4BD2916A9746]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>지역</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[지역]</local-name>
+            <parent-name>[주문]</parent-name>
+            <remote-alias>지역</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LKO_RKR_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[주문_97625591CA484D7B94DC4BD2916A9746]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>제품 ID</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[제품 ID]</local-name>
+            <parent-name>[주문]</parent-name>
+            <remote-alias>제품 ID</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LKO_RKR_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[주문_97625591CA484D7B94DC4BD2916A9746]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>범주</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[범주]</local-name>
+            <parent-name>[주문]</parent-name>
+            <remote-alias>범주</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LKO_RKR_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[주문_97625591CA484D7B94DC4BD2916A9746]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>하위 범주</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[하위 범주]</local-name>
+            <parent-name>[주문]</parent-name>
+            <remote-alias>하위 범주</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LKO_RKR_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[주문_97625591CA484D7B94DC4BD2916A9746]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>제품 이름</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[제품 이름]</local-name>
+            <parent-name>[주문]</parent-name>
+            <remote-alias>제품 이름</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LKO_RKR_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[주문_97625591CA484D7B94DC4BD2916A9746]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>매출</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[매출]</local-name>
+            <parent-name>[주문]</parent-name>
+            <remote-alias>매출</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[주문_97625591CA484D7B94DC4BD2916A9746]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>수량</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[수량]</local-name>
+            <parent-name>[주문]</parent-name>
+            <remote-alias>수량</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[주문_97625591CA484D7B94DC4BD2916A9746]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>할인율</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[할인율]</local-name>
+            <parent-name>[주문]</parent-name>
+            <remote-alias>할인율</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[주문_97625591CA484D7B94DC4BD2916A9746]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>수익</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[수익]</local-name>
+            <parent-name>[주문]</parent-name>
+            <remote-alias>수익</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[주문_97625591CA484D7B94DC4BD2916A9746]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>주문 ID</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[주문 ID (반품 정리)]</local-name>
+            <parent-name>[반품 정리]</parent-name>
+            <remote-alias>주문 ID</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LKO_RKR_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[반품 정리_DB70CC478BE5411BBD5C57419573B2EB]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>반품</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[반품]</local-name>
+            <parent-name>[반품 정리]</parent-name>
+            <remote-alias>반품</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LKO_RKR_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[반품 정리_DB70CC478BE5411BBD5C57419573B2EB]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>사람</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[사람]</local-name>
+            <parent-name>[인력]</parent-name>
+            <remote-alias>사람</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LKO_RKR_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[인력_3FC1D36563E34CDA8707C24EFAFD74ED]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>지역</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[지역 (인력)]</local-name>
+            <parent-name>[인력]</parent-name>
+            <remote-alias>지역</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LKO_RKR_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[인력_3FC1D36563E34CDA8707C24EFAFD74ED]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='수익률' datatype='real' default-format='p0%' name='[Calculation_620933823083577345]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='SUM([수익])/SUM([매출])' />
+      </column>
+      <_.fcp.ObjectModelTableType.true...column caption='반품 정리' datatype='table' name='[__tableau_internal_object_id__].[반품 정리_DB70CC478BE5411BBD5C57419573B2EB]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='인력' datatype='table' name='[__tableau_internal_object_id__].[인력_3FC1D36563E34CDA8707C24EFAFD74ED]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='주문' datatype='table' name='[__tableau_internal_object_id__].[주문_97625591CA484D7B94DC4BD2916A9746]' role='measure' type='quantitative' />
+      <column caption='고객 Id' datatype='string' hidden='true' name='[고객 ID]' role='dimension' type='nominal' />
+      <column datatype='string' name='[고객 이름]' role='dimension' type='nominal' />
+      <column datatype='string' name='[국가/지역]' role='dimension' semantic-role='[Country].[Name]' type='nominal' />
+      <column datatype='string' name='[도시]' role='dimension' semantic-role='[City].[Name]' type='nominal' />
+      <column datatype='real' default-format='C1042%' name='[매출]' role='measure' type='quantitative' />
+      <column datatype='integer' default-format='n#,##0' name='[수량]' role='measure' type='quantitative' />
+      <column aggregation='None' caption='수익(구간차원)' datatype='integer' name='[수익 (bin)]' role='dimension' type='ordinal'>
+        <calculation class='bin' decimals='0' formula='[수익]' peg='0' size-parameter='[Parameters].[Parameter 1]' />
+      </column>
+      <column datatype='real' default-format='C1042%' name='[수익]' role='measure' type='quantitative' />
+      <column datatype='string' name='[시/도]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+      <column datatype='string' name='[제조업체]' role='dimension' type='nominal'>
+        <calculation class='categorical-bin' column='[제품 이름]' default='&quot;Other&quot;' new-bin='true'>
+          <bin default-name='false' value='&quot;삼성&quot;'>
+            <value>&quot;삼성 Audio Dock, Cordless&quot;</value>
+            <value>&quot;삼성 Audio Dock, Full Size&quot;</value>
+            <value>&quot;삼성 Audio Dock, VoIP&quot;</value>
+            <value>&quot;삼성 Audio Dock, with Caller ID&quot;</value>
+            <value>&quot;삼성 Headset, Cordless&quot;</value>
+            <value>&quot;삼성 Headset, Full Size&quot;</value>
+            <value>&quot;삼성 Headset, VoIP&quot;</value>
+            <value>&quot;삼성 Headset, with Caller ID&quot;</value>
+            <value>&quot;삼성 Office Telephone, Cordless&quot;</value>
+            <value>&quot;삼성 Office Telephone, Full Size&quot;</value>
+            <value>&quot;삼성 Office Telephone, VoIP&quot;</value>
+            <value>&quot;삼성 Office Telephone, with Caller ID&quot;</value>
+            <value>&quot;삼성 Signal Booster, Cordless&quot;</value>
+            <value>&quot;삼성 Signal Booster, Full Size&quot;</value>
+            <value>&quot;삼성 Signal Booster, VoIP&quot;</value>
+            <value>&quot;삼성 Signal Booster, with Caller ID&quot;</value>
+            <value>&quot;삼성 Smart Phone, Cordless&quot;</value>
+            <value>&quot;삼성 Smart Phone, Full Size&quot;</value>
+            <value>&quot;삼성 Smart Phone, VoIP&quot;</value>
+            <value>&quot;삼성 Smart Phone, with Caller ID&quot;</value>
+            <value>&quot;삼성 Speaker Phone, Cordless&quot;</value>
+            <value>&quot;삼성 Speaker Phone, Full Size&quot;</value>
+            <value>&quot;삼성 Speaker Phone, VoIP&quot;</value>
+            <value>&quot;삼성 Speaker Phone, with Caller ID&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Acco&quot;'>
+            <value>&quot;Acco 3-Hole Punch, Clear&quot;</value>
+            <value>&quot;Acco 3-Hole Punch, Durable&quot;</value>
+            <value>&quot;Acco 3-Hole Punch, Economy&quot;</value>
+            <value>&quot;Acco 3-Hole Punch, Recycled&quot;</value>
+            <value>&quot;Acco Binder Covers, Clear&quot;</value>
+            <value>&quot;Acco Binder Covers, Durable&quot;</value>
+            <value>&quot;Acco Binder Covers, Economy&quot;</value>
+            <value>&quot;Acco Binder Covers, Recycled&quot;</value>
+            <value>&quot;Acco Binder, Clear&quot;</value>
+            <value>&quot;Acco Binder, Durable&quot;</value>
+            <value>&quot;Acco Binder, Economy&quot;</value>
+            <value>&quot;Acco Binder, Recycled&quot;</value>
+            <value>&quot;Acco Binding Machine, Clear&quot;</value>
+            <value>&quot;Acco Binding Machine, Durable&quot;</value>
+            <value>&quot;Acco Binding Machine, Economy&quot;</value>
+            <value>&quot;Acco Binding Machine, Recycled&quot;</value>
+            <value>&quot;Acco Hole Reinforcements, Clear&quot;</value>
+            <value>&quot;Acco Hole Reinforcements, Durable&quot;</value>
+            <value>&quot;Acco Hole Reinforcements, Economy&quot;</value>
+            <value>&quot;Acco Hole Reinforcements, Recycled&quot;</value>
+            <value>&quot;Acco Index Tab, Clear&quot;</value>
+            <value>&quot;Acco Index Tab, Durable&quot;</value>
+            <value>&quot;Acco Index Tab, Economy&quot;</value>
+            <value>&quot;Accos Clamps, 12 Pack&quot;</value>
+            <value>&quot;Accos Clamps, Assorted Sizes&quot;</value>
+            <value>&quot;Accos Clamps, Bulk Pack&quot;</value>
+            <value>&quot;Accos Clamps, Metal&quot;</value>
+            <value>&quot;Accos Paper Clips, Assorted Sizes&quot;</value>
+            <value>&quot;Accos Paper Clips, Bulk Pack&quot;</value>
+            <value>&quot;Accos Paper Clips, Metal&quot;</value>
+            <value>&quot;Accos Push Pins, 12 Pack&quot;</value>
+            <value>&quot;Accos Push Pins, Assorted Sizes&quot;</value>
+            <value>&quot;Accos Push Pins, Bulk Pack&quot;</value>
+            <value>&quot;Accos Push Pins, Metal&quot;</value>
+            <value>&quot;Accos Rubber Bands, 12 Pack&quot;</value>
+            <value>&quot;Accos Rubber Bands, Assorted Sizes&quot;</value>
+            <value>&quot;Accos Rubber Bands, Bulk Pack&quot;</value>
+            <value>&quot;Accos Rubber Bands, Metal&quot;</value>
+            <value>&quot;Accos Staples, 12 Pack&quot;</value>
+            <value>&quot;Accos Staples, Assorted Sizes&quot;</value>
+            <value>&quot;Accos Staples, Bulk Pack&quot;</value>
+            <value>&quot;Accos Staples, Metal&quot;</value>
+            <value>&quot;Accos Thumb Tacks, 12 Pack&quot;</value>
+            <value>&quot;Accos Thumb Tacks, Assorted Sizes&quot;</value>
+            <value>&quot;Accos Thumb Tacks, Bulk Pack&quot;</value>
+            <value>&quot;Accos Thumb Tacks, Metal&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Acme&quot;'>
+            <value>&quot;Acme Box Cutter, Easy Grip&quot;</value>
+            <value>&quot;Acme Box Cutter, High Speed&quot;</value>
+            <value>&quot;Acme Box Cutter, Serrated&quot;</value>
+            <value>&quot;Acme Box Cutter, Steel&quot;</value>
+            <value>&quot;Acme Letter Opener, Easy Grip&quot;</value>
+            <value>&quot;Acme Letter Opener, High Speed&quot;</value>
+            <value>&quot;Acme Letter Opener, Serrated&quot;</value>
+            <value>&quot;Acme Letter Opener, Steel&quot;</value>
+            <value>&quot;Acme Ruler, Easy Grip&quot;</value>
+            <value>&quot;Acme Ruler, High Speed&quot;</value>
+            <value>&quot;Acme Ruler, Serrated&quot;</value>
+            <value>&quot;Acme Ruler, Steel&quot;</value>
+            <value>&quot;Acme Scissors, Easy Grip&quot;</value>
+            <value>&quot;Acme Scissors, High Speed&quot;</value>
+            <value>&quot;Acme Scissors, Serrated&quot;</value>
+            <value>&quot;Acme Scissors, Steel&quot;</value>
+            <value>&quot;Acme Shears, Easy Grip&quot;</value>
+            <value>&quot;Acme Shears, High Speed&quot;</value>
+            <value>&quot;Acme Shears, Serrated&quot;</value>
+            <value>&quot;Acme Shears, Steel&quot;</value>
+            <value>&quot;Acme Trimmer, Easy Grip&quot;</value>
+            <value>&quot;Acme Trimmer, High Speed&quot;</value>
+            <value>&quot;Acme Trimmer, Serrated&quot;</value>
+            <value>&quot;Acme Trimmer, Steel&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Advantus&quot;'>
+            <value>&quot;Advantus Clamps, 12 Pack&quot;</value>
+            <value>&quot;Advantus Clamps, Assorted Sizes&quot;</value>
+            <value>&quot;Advantus Clamps, Bulk Pack&quot;</value>
+            <value>&quot;Advantus Clamps, Metal&quot;</value>
+            <value>&quot;Advantus Clock, Black&quot;</value>
+            <value>&quot;Advantus Clock, Duo Pack&quot;</value>
+            <value>&quot;Advantus Clock, Durable&quot;</value>
+            <value>&quot;Advantus Clock, Erganomic&quot;</value>
+            <value>&quot;Advantus Door Stop, Black&quot;</value>
+            <value>&quot;Advantus Door Stop, Duo Pack&quot;</value>
+            <value>&quot;Advantus Door Stop, Durable&quot;</value>
+            <value>&quot;Advantus Door Stop, Erganomic&quot;</value>
+            <value>&quot;Advantus Frame, Black&quot;</value>
+            <value>&quot;Advantus Frame, Duo Pack&quot;</value>
+            <value>&quot;Advantus Frame, Durable&quot;</value>
+            <value>&quot;Advantus Frame, Erganomic&quot;</value>
+            <value>&quot;Advantus Light Bulb, Black&quot;</value>
+            <value>&quot;Advantus Light Bulb, Duo Pack&quot;</value>
+            <value>&quot;Advantus Light Bulb, Durable&quot;</value>
+            <value>&quot;Advantus Light Bulb, Erganomic&quot;</value>
+            <value>&quot;Advantus Paper Clips, Assorted Sizes&quot;</value>
+            <value>&quot;Advantus Paper Clips, Bulk Pack&quot;</value>
+            <value>&quot;Advantus Paper Clips, Metal&quot;</value>
+            <value>&quot;Advantus Photo Frame, Black&quot;</value>
+            <value>&quot;Advantus Photo Frame, Duo Pack&quot;</value>
+            <value>&quot;Advantus Photo Frame, Durable&quot;</value>
+            <value>&quot;Advantus Photo Frame, Erganomic&quot;</value>
+            <value>&quot;Advantus Push Pins, 12 Pack&quot;</value>
+            <value>&quot;Advantus Push Pins, Assorted Sizes&quot;</value>
+            <value>&quot;Advantus Push Pins, Bulk Pack&quot;</value>
+            <value>&quot;Advantus Push Pins, Metal&quot;</value>
+            <value>&quot;Advantus Rubber Bands, 12 Pack&quot;</value>
+            <value>&quot;Advantus Rubber Bands, Assorted Sizes&quot;</value>
+            <value>&quot;Advantus Rubber Bands, Bulk Pack&quot;</value>
+            <value>&quot;Advantus Rubber Bands, Metal&quot;</value>
+            <value>&quot;Advantus Stacking Tray, Black&quot;</value>
+            <value>&quot;Advantus Stacking Tray, Durable&quot;</value>
+            <value>&quot;Advantus Stacking Tray, Erganomic&quot;</value>
+            <value>&quot;Advantus Staples, 12 Pack&quot;</value>
+            <value>&quot;Advantus Staples, Assorted Sizes&quot;</value>
+            <value>&quot;Advantus Staples, Bulk Pack&quot;</value>
+            <value>&quot;Advantus Staples, Metal&quot;</value>
+            <value>&quot;Advantus Thumb Tacks, 12 Pack&quot;</value>
+            <value>&quot;Advantus Thumb Tacks, Assorted Sizes&quot;</value>
+            <value>&quot;Advantus Thumb Tacks, Bulk Pack&quot;</value>
+            <value>&quot;Advantus Thumb Tacks, Metal&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Ames&quot;'>
+            <value>&quot;Ames Business Envelopes, Recycled&quot;</value>
+            <value>&quot;Ames Business Envelopes, Security-Tint&quot;</value>
+            <value>&quot;Ames Business Envelopes, Set of 50&quot;</value>
+            <value>&quot;Ames Clasp Envelope, Recycled&quot;</value>
+            <value>&quot;Ames Clasp Envelope, Security-Tint&quot;</value>
+            <value>&quot;Ames Clasp Envelope, Set of 50&quot;</value>
+            <value>&quot;Ames Clasp Envelope, with clear poly window&quot;</value>
+            <value>&quot;Ames Interoffice Envelope, Recycled&quot;</value>
+            <value>&quot;Ames Interoffice Envelope, Security-Tint&quot;</value>
+            <value>&quot;Ames Interoffice Envelope, Set of 50&quot;</value>
+            <value>&quot;Ames Interoffice Envelope, with clear poly window&quot;</value>
+            <value>&quot;Ames Mailers, Recycled&quot;</value>
+            <value>&quot;Ames Mailers, Security-Tint&quot;</value>
+            <value>&quot;Ames Mailers, Set of 50&quot;</value>
+            <value>&quot;Ames Mailers, with clear poly window&quot;</value>
+            <value>&quot;Ames Manila Envelope, Recycled&quot;</value>
+            <value>&quot;Ames Manila Envelope, Security-Tint&quot;</value>
+            <value>&quot;Ames Manila Envelope, Set of 50&quot;</value>
+            <value>&quot;Ames Manila Envelope, with clear poly window&quot;</value>
+            <value>&quot;Ames Peel and Seal, Recycled&quot;</value>
+            <value>&quot;Ames Peel and Seal, Security-Tint&quot;</value>
+            <value>&quot;Ames Peel and Seal, Set of 50&quot;</value>
+            <value>&quot;Ames Peel and Seal, with clear poly window&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Apple&quot;'>
+            <value>&quot;Apple Audio Dock, Cordless&quot;</value>
+            <value>&quot;Apple Audio Dock, Full Size&quot;</value>
+            <value>&quot;Apple Audio Dock, VoIP&quot;</value>
+            <value>&quot;Apple Audio Dock, with Caller ID&quot;</value>
+            <value>&quot;Apple Headset, Cordless&quot;</value>
+            <value>&quot;Apple Headset, Full Size&quot;</value>
+            <value>&quot;Apple Headset, VoIP&quot;</value>
+            <value>&quot;Apple Headset, with Caller ID&quot;</value>
+            <value>&quot;Apple Office Telephone, Cordless&quot;</value>
+            <value>&quot;Apple Office Telephone, Full Size&quot;</value>
+            <value>&quot;Apple Office Telephone, VoIP&quot;</value>
+            <value>&quot;Apple Office Telephone, with Caller ID&quot;</value>
+            <value>&quot;Apple Signal Booster, Cordless&quot;</value>
+            <value>&quot;Apple Signal Booster, Full Size&quot;</value>
+            <value>&quot;Apple Signal Booster, VoIP&quot;</value>
+            <value>&quot;Apple Signal Booster, with Caller ID&quot;</value>
+            <value>&quot;Apple Smart Phone, Cordless&quot;</value>
+            <value>&quot;Apple Smart Phone, Full Size&quot;</value>
+            <value>&quot;Apple Smart Phone, with Caller ID&quot;</value>
+            <value>&quot;Apple Speaker Phone, Cordless&quot;</value>
+            <value>&quot;Apple Speaker Phone, Full Size&quot;</value>
+            <value>&quot;Apple Speaker Phone, VoIP&quot;</value>
+            <value>&quot;Apple Speaker Phone, with Caller ID&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Avery&quot;'>
+            <value>&quot;Avery 3-Hole Punch, Clear&quot;</value>
+            <value>&quot;Avery 3-Hole Punch, Durable&quot;</value>
+            <value>&quot;Avery 3-Hole Punch, Economy&quot;</value>
+            <value>&quot;Avery 3-Hole Punch, Recycled&quot;</value>
+            <value>&quot;Avery Binder Covers, Clear&quot;</value>
+            <value>&quot;Avery Binder Covers, Durable&quot;</value>
+            <value>&quot;Avery Binder Covers, Economy&quot;</value>
+            <value>&quot;Avery Binder Covers, Recycled&quot;</value>
+            <value>&quot;Avery Binder, Clear&quot;</value>
+            <value>&quot;Avery Binder, Durable&quot;</value>
+            <value>&quot;Avery Binder, Economy&quot;</value>
+            <value>&quot;Avery Binder, Recycled&quot;</value>
+            <value>&quot;Avery Binding Machine, Clear&quot;</value>
+            <value>&quot;Avery Binding Machine, Durable&quot;</value>
+            <value>&quot;Avery Binding Machine, Economy&quot;</value>
+            <value>&quot;Avery Binding Machine, Recycled&quot;</value>
+            <value>&quot;Avery Color Coded Labels, 5000 Label Set&quot;</value>
+            <value>&quot;Avery Color Coded Labels, Adjustable&quot;</value>
+            <value>&quot;Avery Color Coded Labels, Alphabetical&quot;</value>
+            <value>&quot;Avery Color Coded Labels, Laser Printer Compatible&quot;</value>
+            <value>&quot;Avery File Folder Labels, 5000 Label Set&quot;</value>
+            <value>&quot;Avery File Folder Labels, Adjustable&quot;</value>
+            <value>&quot;Avery File Folder Labels, Alphabetical&quot;</value>
+            <value>&quot;Avery File Folder Labels, Laser Printer Compatible&quot;</value>
+            <value>&quot;Avery Hole Reinforcements, Clear&quot;</value>
+            <value>&quot;Avery Hole Reinforcements, Durable&quot;</value>
+            <value>&quot;Avery Hole Reinforcements, Economy&quot;</value>
+            <value>&quot;Avery Hole Reinforcements, Recycled&quot;</value>
+            <value>&quot;Avery Index Tab, Clear&quot;</value>
+            <value>&quot;Avery Index Tab, Durable&quot;</value>
+            <value>&quot;Avery Index Tab, Economy&quot;</value>
+            <value>&quot;Avery Legal Exhibit Labels, 5000 Label Set&quot;</value>
+            <value>&quot;Avery Legal Exhibit Labels, Adjustable&quot;</value>
+            <value>&quot;Avery Legal Exhibit Labels, Alphabetical&quot;</value>
+            <value>&quot;Avery Legal Exhibit Labels, Laser Printer Compatible&quot;</value>
+            <value>&quot;Avery Removable Labels, 5000 Label Set&quot;</value>
+            <value>&quot;Avery Removable Labels, Adjustable&quot;</value>
+            <value>&quot;Avery Removable Labels, Alphabetical&quot;</value>
+            <value>&quot;Avery Removable Labels, Laser Printer Compatible&quot;</value>
+            <value>&quot;Avery Round Labels, 5000 Label Set&quot;</value>
+            <value>&quot;Avery Round Labels, Adjustable&quot;</value>
+            <value>&quot;Avery Round Labels, Alphabetical&quot;</value>
+            <value>&quot;Avery Round Labels, Laser Printer Compatible&quot;</value>
+            <value>&quot;Avery Shipping Labels, 5000 Label Set&quot;</value>
+            <value>&quot;Avery Shipping Labels, Adjustable&quot;</value>
+            <value>&quot;Avery Shipping Labels, Alphabetical&quot;</value>
+            <value>&quot;Avery Shipping Labels, Laser Printer Compatible&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Barricks&quot;'>
+            <value>&quot;Barricks Coffee Table, Adjustable Height&quot;</value>
+            <value>&quot;Barricks Coffee Table, Fully Assembled&quot;</value>
+            <value>&quot;Barricks Coffee Table, Rectangular&quot;</value>
+            <value>&quot;Barricks Computer Table, Fully Assembled&quot;</value>
+            <value>&quot;Barricks Computer Table, with Bottom Storage&quot;</value>
+            <value>&quot;Barricks Conference Table, Adjustable Height&quot;</value>
+            <value>&quot;Barricks Conference Table, Fully Assembled&quot;</value>
+            <value>&quot;Barricks Conference Table, with Bottom Storage&quot;</value>
+            <value>&quot;Barricks Round Table, Fully Assembled&quot;</value>
+            <value>&quot;Barricks Training Table, Adjustable Height&quot;</value>
+            <value>&quot;Barricks Training Table, Fully Assembled&quot;</value>
+            <value>&quot;Barricks Training Table, Rectangular&quot;</value>
+            <value>&quot;Barricks Training Table, with Bottom Storage&quot;</value>
+            <value>&quot;Barricks Wood Table, Adjustable Height&quot;</value>
+            <value>&quot;Barricks Wood Table, Rectangular&quot;</value>
+            <value>&quot;Barricks Wood Table, with Bottom Storage&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Belkin&quot;'>
+            <value>&quot;Belkin Flash Drive, Bluetooth&quot;</value>
+            <value>&quot;Belkin Flash Drive, Erganomic&quot;</value>
+            <value>&quot;Belkin Flash Drive, Programmable&quot;</value>
+            <value>&quot;Belkin Flash Drive, USB&quot;</value>
+            <value>&quot;Belkin Keyboard, Bluetooth&quot;</value>
+            <value>&quot;Belkin Keyboard, Erganomic&quot;</value>
+            <value>&quot;Belkin Keyboard, Programmable&quot;</value>
+            <value>&quot;Belkin Keyboard, USB&quot;</value>
+            <value>&quot;Belkin Memory Card, Bluetooth&quot;</value>
+            <value>&quot;Belkin Memory Card, Erganomic&quot;</value>
+            <value>&quot;Belkin Memory Card, Programmable&quot;</value>
+            <value>&quot;Belkin Memory Card, USB&quot;</value>
+            <value>&quot;Belkin Mouse, Bluetooth&quot;</value>
+            <value>&quot;Belkin Mouse, Erganomic&quot;</value>
+            <value>&quot;Belkin Mouse, Programmable&quot;</value>
+            <value>&quot;Belkin Mouse, USB&quot;</value>
+            <value>&quot;Belkin Numeric Keypad, Bluetooth&quot;</value>
+            <value>&quot;Belkin Numeric Keypad, Erganomic&quot;</value>
+            <value>&quot;Belkin Numeric Keypad, USB&quot;</value>
+            <value>&quot;Belkin Router, Bluetooth&quot;</value>
+            <value>&quot;Belkin Router, Erganomic&quot;</value>
+            <value>&quot;Belkin Router, Programmable&quot;</value>
+            <value>&quot;Belkin Router, USB&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Bevis&quot;'>
+            <value>&quot;Bevis Coffee Table, Adjustable Height&quot;</value>
+            <value>&quot;Bevis Coffee Table, Fully Assembled&quot;</value>
+            <value>&quot;Bevis Computer Table, Adjustable Height&quot;</value>
+            <value>&quot;Bevis Computer Table, Fully Assembled&quot;</value>
+            <value>&quot;Bevis Computer Table, with Bottom Storage&quot;</value>
+            <value>&quot;Bevis Conference Table, Fully Assembled&quot;</value>
+            <value>&quot;Bevis Conference Table, with Bottom Storage&quot;</value>
+            <value>&quot;Bevis Round Table, Adjustable Height&quot;</value>
+            <value>&quot;Bevis Round Table, Fully Assembled&quot;</value>
+            <value>&quot;Bevis Round Table, Rectangular&quot;</value>
+            <value>&quot;Bevis Round Table, with Bottom Storage&quot;</value>
+            <value>&quot;Bevis Training Table, Adjustable Height&quot;</value>
+            <value>&quot;Bevis Training Table, Fully Assembled&quot;</value>
+            <value>&quot;Bevis Training Table, Rectangular&quot;</value>
+            <value>&quot;Bevis Training Table, with Bottom Storage&quot;</value>
+            <value>&quot;Bevis Wood Table, Adjustable Height&quot;</value>
+            <value>&quot;Bevis Wood Table, Fully Assembled&quot;</value>
+            <value>&quot;Bevis Wood Table, Rectangular&quot;</value>
+            <value>&quot;Bevis Wood Table, with Bottom Storage&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;BIC&quot;'>
+            <value>&quot;BIC Canvas, Blue&quot;</value>
+            <value>&quot;BIC Canvas, Easy-Erase&quot;</value>
+            <value>&quot;BIC Canvas, Fluorescent&quot;</value>
+            <value>&quot;BIC Canvas, Water Color&quot;</value>
+            <value>&quot;BIC Highlighters, Blue&quot;</value>
+            <value>&quot;BIC Highlighters, Easy-Erase&quot;</value>
+            <value>&quot;BIC Highlighters, Fluorescent&quot;</value>
+            <value>&quot;BIC Highlighters, Water Color&quot;</value>
+            <value>&quot;BIC Markers, Blue&quot;</value>
+            <value>&quot;BIC Markers, Easy-Erase&quot;</value>
+            <value>&quot;BIC Markers, Fluorescent&quot;</value>
+            <value>&quot;BIC Markers, Water Color&quot;</value>
+            <value>&quot;BIC Pencil Sharpener, Blue&quot;</value>
+            <value>&quot;BIC Pencil Sharpener, Easy-Erase&quot;</value>
+            <value>&quot;BIC Pencil Sharpener, Fluorescent&quot;</value>
+            <value>&quot;BIC Pencil Sharpener, Water Color&quot;</value>
+            <value>&quot;BIC Pens, Blue&quot;</value>
+            <value>&quot;BIC Pens, Easy-Erase&quot;</value>
+            <value>&quot;BIC Pens, Fluorescent&quot;</value>
+            <value>&quot;BIC Pens, Water Color&quot;</value>
+            <value>&quot;BIC Sketch Pad, Blue&quot;</value>
+            <value>&quot;BIC Sketch Pad, Easy-Erase&quot;</value>
+            <value>&quot;BIC Sketch Pad, Fluorescent&quot;</value>
+            <value>&quot;BIC Sketch Pad, Water Color&quot;</value>
+            <value>&quot;Ibico 3-Hole Punch, Clear&quot;</value>
+            <value>&quot;Ibico 3-Hole Punch, Durable&quot;</value>
+            <value>&quot;Ibico 3-Hole Punch, Economy&quot;</value>
+            <value>&quot;Ibico 3-Hole Punch, Recycled&quot;</value>
+            <value>&quot;Ibico Binder Covers, Clear&quot;</value>
+            <value>&quot;Ibico Binder Covers, Durable&quot;</value>
+            <value>&quot;Ibico Binder Covers, Economy&quot;</value>
+            <value>&quot;Ibico Binder Covers, Recycled&quot;</value>
+            <value>&quot;Ibico Binder, Clear&quot;</value>
+            <value>&quot;Ibico Binder, Durable&quot;</value>
+            <value>&quot;Ibico Binder, Economy&quot;</value>
+            <value>&quot;Ibico Binder, Recycled&quot;</value>
+            <value>&quot;Ibico Binding Machine, Clear&quot;</value>
+            <value>&quot;Ibico Binding Machine, Durable&quot;</value>
+            <value>&quot;Ibico Binding Machine, Economy&quot;</value>
+            <value>&quot;Ibico Binding Machine, Recycled&quot;</value>
+            <value>&quot;Ibico Hole Reinforcements, Clear&quot;</value>
+            <value>&quot;Ibico Hole Reinforcements, Durable&quot;</value>
+            <value>&quot;Ibico Hole Reinforcements, Economy&quot;</value>
+            <value>&quot;Ibico Hole Reinforcements, Recycled&quot;</value>
+            <value>&quot;Ibico Index Tab, Clear&quot;</value>
+            <value>&quot;Ibico Index Tab, Durable&quot;</value>
+            <value>&quot;Ibico Index Tab, Economy&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Binney &amp; Smith&quot;'>
+            <value>&quot;Binney &amp; Smith Canvas, Blue&quot;</value>
+            <value>&quot;Binney &amp; Smith Canvas, Easy-Erase&quot;</value>
+            <value>&quot;Binney &amp; Smith Canvas, Fluorescent&quot;</value>
+            <value>&quot;Binney &amp; Smith Canvas, Water Color&quot;</value>
+            <value>&quot;Binney &amp; Smith Highlighters, Blue&quot;</value>
+            <value>&quot;Binney &amp; Smith Highlighters, Easy-Erase&quot;</value>
+            <value>&quot;Binney &amp; Smith Highlighters, Fluorescent&quot;</value>
+            <value>&quot;Binney &amp; Smith Highlighters, Water Color&quot;</value>
+            <value>&quot;Binney &amp; Smith Markers, Blue&quot;</value>
+            <value>&quot;Binney &amp; Smith Markers, Easy-Erase&quot;</value>
+            <value>&quot;Binney &amp; Smith Markers, Fluorescent&quot;</value>
+            <value>&quot;Binney &amp; Smith Markers, Water Color&quot;</value>
+            <value>&quot;Binney &amp; Smith Pencil Sharpener, Easy-Erase&quot;</value>
+            <value>&quot;Binney &amp; Smith Pencil Sharpener, Fluorescent&quot;</value>
+            <value>&quot;Binney &amp; Smith Pencil Sharpener, Water Color&quot;</value>
+            <value>&quot;Binney &amp; Smith Pens, Blue&quot;</value>
+            <value>&quot;Binney &amp; Smith Pens, Easy-Erase&quot;</value>
+            <value>&quot;Binney &amp; Smith Pens, Fluorescent&quot;</value>
+            <value>&quot;Binney &amp; Smith Pens, Water Color&quot;</value>
+            <value>&quot;Binney &amp; Smith Sketch Pad, Blue&quot;</value>
+            <value>&quot;Binney &amp; Smith Sketch Pad, Easy-Erase&quot;</value>
+            <value>&quot;Binney &amp; Smith Sketch Pad, Fluorescent&quot;</value>
+            <value>&quot;Binney &amp; Smith Sketch Pad, Water Color&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Boston&quot;'>
+            <value>&quot;Boston Canvas, Blue&quot;</value>
+            <value>&quot;Boston Canvas, Easy-Erase&quot;</value>
+            <value>&quot;Boston Canvas, Fluorescent&quot;</value>
+            <value>&quot;Boston Canvas, Water Color&quot;</value>
+            <value>&quot;Boston Highlighters, Blue&quot;</value>
+            <value>&quot;Boston Highlighters, Easy-Erase&quot;</value>
+            <value>&quot;Boston Highlighters, Fluorescent&quot;</value>
+            <value>&quot;Boston Highlighters, Water Color&quot;</value>
+            <value>&quot;Boston Markers, Blue&quot;</value>
+            <value>&quot;Boston Markers, Easy-Erase&quot;</value>
+            <value>&quot;Boston Markers, Fluorescent&quot;</value>
+            <value>&quot;Boston Markers, Water Color&quot;</value>
+            <value>&quot;Boston Pencil Sharpener, Easy-Erase&quot;</value>
+            <value>&quot;Boston Pencil Sharpener, Fluorescent&quot;</value>
+            <value>&quot;Boston Pencil Sharpener, Water Color&quot;</value>
+            <value>&quot;Boston Pens, Blue&quot;</value>
+            <value>&quot;Boston Pens, Easy-Erase&quot;</value>
+            <value>&quot;Boston Pens, Fluorescent&quot;</value>
+            <value>&quot;Boston Pens, Water Color&quot;</value>
+            <value>&quot;Boston Sketch Pad, Blue&quot;</value>
+            <value>&quot;Boston Sketch Pad, Easy-Erase&quot;</value>
+            <value>&quot;Boston Sketch Pad, Fluorescent&quot;</value>
+            <value>&quot;Boston Sketch Pad, Water Color&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Breville&quot;'>
+            <value>&quot;Breville Blender, Black&quot;</value>
+            <value>&quot;Breville Blender, Silver&quot;</value>
+            <value>&quot;Breville Blender, White&quot;</value>
+            <value>&quot;Breville Coffee Grinder, Black&quot;</value>
+            <value>&quot;Breville Coffee Grinder, Red&quot;</value>
+            <value>&quot;Breville Coffee Grinder, Silver&quot;</value>
+            <value>&quot;Breville Coffee Grinder, White&quot;</value>
+            <value>&quot;Breville Microwave, Red&quot;</value>
+            <value>&quot;Breville Microwave, Silver&quot;</value>
+            <value>&quot;Breville Microwave, White&quot;</value>
+            <value>&quot;Breville Refrigerator, Black&quot;</value>
+            <value>&quot;Breville Refrigerator, Red&quot;</value>
+            <value>&quot;Breville Refrigerator, Silver&quot;</value>
+            <value>&quot;Breville Refrigerator, White&quot;</value>
+            <value>&quot;Breville Stove, Black&quot;</value>
+            <value>&quot;Breville Stove, Red&quot;</value>
+            <value>&quot;Breville Stove, Silver&quot;</value>
+            <value>&quot;Breville Stove, White&quot;</value>
+            <value>&quot;Breville Toaster, Black&quot;</value>
+            <value>&quot;Breville Toaster, Red&quot;</value>
+            <value>&quot;Breville Toaster, Silver&quot;</value>
+            <value>&quot;Breville Toaster, White&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Brother&quot;'>
+            <value>&quot;Brother Copy Machine, Color&quot;</value>
+            <value>&quot;Brother Copy Machine, High-Speed&quot;</value>
+            <value>&quot;Brother Copy Machine, Laser&quot;</value>
+            <value>&quot;Brother Fax and Copier, Color&quot;</value>
+            <value>&quot;Brother Fax and Copier, Digital&quot;</value>
+            <value>&quot;Brother Fax and Copier, High-Speed&quot;</value>
+            <value>&quot;Brother Fax and Copier, Laser&quot;</value>
+            <value>&quot;Brother Fax Machine, Color&quot;</value>
+            <value>&quot;Brother Fax Machine, Digital&quot;</value>
+            <value>&quot;Brother Fax Machine, High-Speed&quot;</value>
+            <value>&quot;Brother Fax Machine, Laser&quot;</value>
+            <value>&quot;Brother Ink, Color&quot;</value>
+            <value>&quot;Brother Ink, Digital&quot;</value>
+            <value>&quot;Brother Ink, High-Speed&quot;</value>
+            <value>&quot;Brother Ink, Laser&quot;</value>
+            <value>&quot;Brother Personal Copier, Color&quot;</value>
+            <value>&quot;Brother Personal Copier, Digital&quot;</value>
+            <value>&quot;Brother Personal Copier, High-Speed&quot;</value>
+            <value>&quot;Brother Personal Copier, Laser&quot;</value>
+            <value>&quot;Brother Wireless Fax, Color&quot;</value>
+            <value>&quot;Brother Wireless Fax, Digital&quot;</value>
+            <value>&quot;Brother Wireless Fax, High-Speed&quot;</value>
+            <value>&quot;Brother Wireless Fax, Laser&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Bush&quot;'>
+            <value>&quot;Bush 3-Shelf Cabinet, Metal&quot;</value>
+            <value>&quot;Bush 3-Shelf Cabinet, Mobile&quot;</value>
+            <value>&quot;Bush 3-Shelf Cabinet, Pine&quot;</value>
+            <value>&quot;Bush 3-Shelf Cabinet, Traditional&quot;</value>
+            <value>&quot;Bush Classic Bookcase, Metal&quot;</value>
+            <value>&quot;Bush Classic Bookcase, Mobile&quot;</value>
+            <value>&quot;Bush Classic Bookcase, Pine&quot;</value>
+            <value>&quot;Bush Classic Bookcase, Traditional&quot;</value>
+            <value>&quot;Bush Corner Shelving, Metal&quot;</value>
+            <value>&quot;Bush Corner Shelving, Mobile&quot;</value>
+            <value>&quot;Bush Corner Shelving, Pine&quot;</value>
+            <value>&quot;Bush Corner Shelving, Traditional&quot;</value>
+            <value>&quot;Bush Floating Shelf Set, Metal&quot;</value>
+            <value>&quot;Bush Floating Shelf Set, Mobile&quot;</value>
+            <value>&quot;Bush Floating Shelf Set, Pine&quot;</value>
+            <value>&quot;Bush Floating Shelf Set, Traditional&quot;</value>
+            <value>&quot;Bush Library with Doors, Metal&quot;</value>
+            <value>&quot;Bush Library with Doors, Mobile&quot;</value>
+            <value>&quot;Bush Library with Doors, Pine&quot;</value>
+            <value>&quot;Bush Library with Doors, Traditional&quot;</value>
+            <value>&quot;Bush Stackable Bookrack, Mobile&quot;</value>
+            <value>&quot;Bush Stackable Bookrack, Pine&quot;</value>
+            <value>&quot;Bush Stackable Bookrack, Traditional&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Cameo&quot;'>
+            <value>&quot;Cameo Business Envelopes, Recycled&quot;</value>
+            <value>&quot;Cameo Business Envelopes, Security-Tint&quot;</value>
+            <value>&quot;Cameo Business Envelopes, Set of 50&quot;</value>
+            <value>&quot;Cameo Clasp Envelope, Recycled&quot;</value>
+            <value>&quot;Cameo Clasp Envelope, Security-Tint&quot;</value>
+            <value>&quot;Cameo Clasp Envelope, Set of 50&quot;</value>
+            <value>&quot;Cameo Clasp Envelope, with clear poly window&quot;</value>
+            <value>&quot;Cameo Interoffice Envelope, Recycled&quot;</value>
+            <value>&quot;Cameo Interoffice Envelope, Security-Tint&quot;</value>
+            <value>&quot;Cameo Interoffice Envelope, Set of 50&quot;</value>
+            <value>&quot;Cameo Interoffice Envelope, with clear poly window&quot;</value>
+            <value>&quot;Cameo Mailers, Recycled&quot;</value>
+            <value>&quot;Cameo Mailers, Security-Tint&quot;</value>
+            <value>&quot;Cameo Mailers, Set of 50&quot;</value>
+            <value>&quot;Cameo Mailers, with clear poly window&quot;</value>
+            <value>&quot;Cameo Manila Envelope, Recycled&quot;</value>
+            <value>&quot;Cameo Manila Envelope, Security-Tint&quot;</value>
+            <value>&quot;Cameo Manila Envelope, Set of 50&quot;</value>
+            <value>&quot;Cameo Manila Envelope, with clear poly window&quot;</value>
+            <value>&quot;Cameo Peel and Seal, Recycled&quot;</value>
+            <value>&quot;Cameo Peel and Seal, Security-Tint&quot;</value>
+            <value>&quot;Cameo Peel and Seal, Set of 50&quot;</value>
+            <value>&quot;Cameo Peel and Seal, with clear poly window&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Canon&quot;'>
+            <value>&quot;Canon Copy Machine, Color&quot;</value>
+            <value>&quot;Canon Copy Machine, Digital&quot;</value>
+            <value>&quot;Canon Copy Machine, High-Speed&quot;</value>
+            <value>&quot;Canon Copy Machine, Laser&quot;</value>
+            <value>&quot;Canon Fax and Copier, Color&quot;</value>
+            <value>&quot;Canon Fax and Copier, Digital&quot;</value>
+            <value>&quot;Canon Fax and Copier, High-Speed&quot;</value>
+            <value>&quot;Canon Fax and Copier, Laser&quot;</value>
+            <value>&quot;Canon Fax Machine, Color&quot;</value>
+            <value>&quot;Canon Fax Machine, Digital&quot;</value>
+            <value>&quot;Canon Fax Machine, High-Speed&quot;</value>
+            <value>&quot;Canon Fax Machine, Laser&quot;</value>
+            <value>&quot;Canon Ink, Color&quot;</value>
+            <value>&quot;Canon Ink, Digital&quot;</value>
+            <value>&quot;Canon Ink, High-Speed&quot;</value>
+            <value>&quot;Canon Ink, Laser&quot;</value>
+            <value>&quot;Canon Personal Copier, Color&quot;</value>
+            <value>&quot;Canon Personal Copier, Digital&quot;</value>
+            <value>&quot;Canon Personal Copier, High-Speed&quot;</value>
+            <value>&quot;Canon Personal Copier, Laser&quot;</value>
+            <value>&quot;Canon Wireless Fax, Color&quot;</value>
+            <value>&quot;Canon Wireless Fax, Digital&quot;</value>
+            <value>&quot;Canon Wireless Fax, High-Speed&quot;</value>
+            <value>&quot;Canon Wireless Fax, Laser&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Cardinal&quot;'>
+            <value>&quot;Cardinal 3-Hole Punch, Clear&quot;</value>
+            <value>&quot;Cardinal 3-Hole Punch, Durable&quot;</value>
+            <value>&quot;Cardinal 3-Hole Punch, Economy&quot;</value>
+            <value>&quot;Cardinal 3-Hole Punch, Recycled&quot;</value>
+            <value>&quot;Cardinal Binder Covers, Clear&quot;</value>
+            <value>&quot;Cardinal Binder Covers, Durable&quot;</value>
+            <value>&quot;Cardinal Binder Covers, Economy&quot;</value>
+            <value>&quot;Cardinal Binder Covers, Recycled&quot;</value>
+            <value>&quot;Cardinal Binder, Clear&quot;</value>
+            <value>&quot;Cardinal Binder, Durable&quot;</value>
+            <value>&quot;Cardinal Binder, Economy&quot;</value>
+            <value>&quot;Cardinal Binder, Recycled&quot;</value>
+            <value>&quot;Cardinal Binding Machine, Clear&quot;</value>
+            <value>&quot;Cardinal Binding Machine, Durable&quot;</value>
+            <value>&quot;Cardinal Binding Machine, Economy&quot;</value>
+            <value>&quot;Cardinal Binding Machine, Recycled&quot;</value>
+            <value>&quot;Cardinal Hole Reinforcements, Clear&quot;</value>
+            <value>&quot;Cardinal Hole Reinforcements, Durable&quot;</value>
+            <value>&quot;Cardinal Hole Reinforcements, Economy&quot;</value>
+            <value>&quot;Cardinal Hole Reinforcements, Recycled&quot;</value>
+            <value>&quot;Cardinal Index Tab, Clear&quot;</value>
+            <value>&quot;Cardinal Index Tab, Durable&quot;</value>
+            <value>&quot;Cardinal Index Tab, Economy&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Chromcraft&quot;'>
+            <value>&quot;Chromcraft Coffee Table, Adjustable Height&quot;</value>
+            <value>&quot;Chromcraft Coffee Table, with Bottom Storage&quot;</value>
+            <value>&quot;Chromcraft Computer Table, Fully Assembled&quot;</value>
+            <value>&quot;Chromcraft Computer Table, with Bottom Storage&quot;</value>
+            <value>&quot;Chromcraft Conference Table, Adjustable Height&quot;</value>
+            <value>&quot;Chromcraft Conference Table, Fully Assembled&quot;</value>
+            <value>&quot;Chromcraft Conference Table, Rectangular&quot;</value>
+            <value>&quot;Chromcraft Conference Table, with Bottom Storage&quot;</value>
+            <value>&quot;Chromcraft Round Table, Adjustable Height&quot;</value>
+            <value>&quot;Chromcraft Round Table, Fully Assembled&quot;</value>
+            <value>&quot;Chromcraft Round Table, with Bottom Storage&quot;</value>
+            <value>&quot;Chromcraft Training Table, Fully Assembled&quot;</value>
+            <value>&quot;Chromcraft Training Table, Rectangular&quot;</value>
+            <value>&quot;Chromcraft Training Table, with Bottom Storage&quot;</value>
+            <value>&quot;Chromcraft Wood Table, Fully Assembled&quot;</value>
+            <value>&quot;Chromcraft Wood Table, Rectangular&quot;</value>
+            <value>&quot;Chromcraft Wood Table, with Bottom Storage&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Cisco&quot;'>
+            <value>&quot;Cisco Audio Dock, Cordless&quot;</value>
+            <value>&quot;Cisco Audio Dock, Full Size&quot;</value>
+            <value>&quot;Cisco Audio Dock, VoIP&quot;</value>
+            <value>&quot;Cisco Audio Dock, with Caller ID&quot;</value>
+            <value>&quot;Cisco Headset, Cordless&quot;</value>
+            <value>&quot;Cisco Headset, Full Size&quot;</value>
+            <value>&quot;Cisco Headset, VoIP&quot;</value>
+            <value>&quot;Cisco Headset, with Caller ID&quot;</value>
+            <value>&quot;Cisco Office Telephone, Cordless&quot;</value>
+            <value>&quot;Cisco Office Telephone, Full Size&quot;</value>
+            <value>&quot;Cisco Office Telephone, VoIP&quot;</value>
+            <value>&quot;Cisco Office Telephone, with Caller ID&quot;</value>
+            <value>&quot;Cisco Signal Booster, Cordless&quot;</value>
+            <value>&quot;Cisco Signal Booster, Full Size&quot;</value>
+            <value>&quot;Cisco Signal Booster, VoIP&quot;</value>
+            <value>&quot;Cisco Signal Booster, with Caller ID&quot;</value>
+            <value>&quot;Cisco Smart Phone, Cordless&quot;</value>
+            <value>&quot;Cisco Smart Phone, Full Size&quot;</value>
+            <value>&quot;Cisco Smart Phone, with Caller ID&quot;</value>
+            <value>&quot;Cisco Speaker Phone, Cordless&quot;</value>
+            <value>&quot;Cisco Speaker Phone, Full Size&quot;</value>
+            <value>&quot;Cisco Speaker Phone, VoIP&quot;</value>
+            <value>&quot;Cisco Speaker Phone, with Caller ID&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Cuisinart&quot;'>
+            <value>&quot;Cuisinart Blender, Black&quot;</value>
+            <value>&quot;Cuisinart Blender, Red&quot;</value>
+            <value>&quot;Cuisinart Blender, Silver&quot;</value>
+            <value>&quot;Cuisinart Blender, White&quot;</value>
+            <value>&quot;Cuisinart Coffee Grinder, Black&quot;</value>
+            <value>&quot;Cuisinart Coffee Grinder, Red&quot;</value>
+            <value>&quot;Cuisinart Coffee Grinder, Silver&quot;</value>
+            <value>&quot;Cuisinart Coffee Grinder, White&quot;</value>
+            <value>&quot;Cuisinart Microwave, Black&quot;</value>
+            <value>&quot;Cuisinart Microwave, Red&quot;</value>
+            <value>&quot;Cuisinart Microwave, Silver&quot;</value>
+            <value>&quot;Cuisinart Microwave, White&quot;</value>
+            <value>&quot;Cuisinart Refrigerator, Black&quot;</value>
+            <value>&quot;Cuisinart Refrigerator, Red&quot;</value>
+            <value>&quot;Cuisinart Refrigerator, Silver&quot;</value>
+            <value>&quot;Cuisinart Refrigerator, White&quot;</value>
+            <value>&quot;Cuisinart Stove, Black&quot;</value>
+            <value>&quot;Cuisinart Stove, Red&quot;</value>
+            <value>&quot;Cuisinart Stove, Silver&quot;</value>
+            <value>&quot;Cuisinart Stove, White&quot;</value>
+            <value>&quot;Cuisinart Toaster, Black&quot;</value>
+            <value>&quot;Cuisinart Toaster, Red&quot;</value>
+            <value>&quot;Cuisinart Toaster, Silver&quot;</value>
+            <value>&quot;Cuisinart Toaster, White&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Dania&quot;'>
+            <value>&quot;Dania 3-Shelf Cabinet, Metal&quot;</value>
+            <value>&quot;Dania 3-Shelf Cabinet, Mobile&quot;</value>
+            <value>&quot;Dania 3-Shelf Cabinet, Pine&quot;</value>
+            <value>&quot;Dania 3-Shelf Cabinet, Traditional&quot;</value>
+            <value>&quot;Dania Classic Bookcase, Metal&quot;</value>
+            <value>&quot;Dania Classic Bookcase, Mobile&quot;</value>
+            <value>&quot;Dania Classic Bookcase, Pine&quot;</value>
+            <value>&quot;Dania Classic Bookcase, Traditional&quot;</value>
+            <value>&quot;Dania Corner Shelving, Metal&quot;</value>
+            <value>&quot;Dania Corner Shelving, Mobile&quot;</value>
+            <value>&quot;Dania Corner Shelving, Pine&quot;</value>
+            <value>&quot;Dania Corner Shelving, Traditional&quot;</value>
+            <value>&quot;Dania Floating Shelf Set, Metal&quot;</value>
+            <value>&quot;Dania Floating Shelf Set, Mobile&quot;</value>
+            <value>&quot;Dania Floating Shelf Set, Pine&quot;</value>
+            <value>&quot;Dania Floating Shelf Set, Traditional&quot;</value>
+            <value>&quot;Dania Library with Doors, Metal&quot;</value>
+            <value>&quot;Dania Library with Doors, Mobile&quot;</value>
+            <value>&quot;Dania Library with Doors, Pine&quot;</value>
+            <value>&quot;Dania Library with Doors, Traditional&quot;</value>
+            <value>&quot;Dania Stackable Bookrack, Mobile&quot;</value>
+            <value>&quot;Dania Stackable Bookrack, Pine&quot;</value>
+            <value>&quot;Dania Stackable Bookrack, Traditional&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Deflect-O&quot;'>
+            <value>&quot;Deflect-O Clock, Black&quot;</value>
+            <value>&quot;Deflect-O Clock, Duo Pack&quot;</value>
+            <value>&quot;Deflect-O Clock, Durable&quot;</value>
+            <value>&quot;Deflect-O Clock, Erganomic&quot;</value>
+            <value>&quot;Deflect-O Door Stop, Black&quot;</value>
+            <value>&quot;Deflect-O Door Stop, Duo Pack&quot;</value>
+            <value>&quot;Deflect-O Door Stop, Durable&quot;</value>
+            <value>&quot;Deflect-O Door Stop, Erganomic&quot;</value>
+            <value>&quot;Deflect-O Frame, Black&quot;</value>
+            <value>&quot;Deflect-O Frame, Duo Pack&quot;</value>
+            <value>&quot;Deflect-O Frame, Durable&quot;</value>
+            <value>&quot;Deflect-O Frame, Erganomic&quot;</value>
+            <value>&quot;Deflect-O Light Bulb, Black&quot;</value>
+            <value>&quot;Deflect-O Light Bulb, Duo Pack&quot;</value>
+            <value>&quot;Deflect-O Light Bulb, Durable&quot;</value>
+            <value>&quot;Deflect-O Light Bulb, Erganomic&quot;</value>
+            <value>&quot;Deflect-O Photo Frame, Black&quot;</value>
+            <value>&quot;Deflect-O Photo Frame, Duo Pack&quot;</value>
+            <value>&quot;Deflect-O Photo Frame, Durable&quot;</value>
+            <value>&quot;Deflect-O Photo Frame, Erganomic&quot;</value>
+            <value>&quot;Deflect-O Stacking Tray, Black&quot;</value>
+            <value>&quot;Deflect-O Stacking Tray, Durable&quot;</value>
+            <value>&quot;Deflect-O Stacking Tray, Erganomic&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Eaton&quot;'>
+            <value>&quot;Eaton Cards &amp; Envelopes, 8.5 x 11&quot;</value>
+            <value>&quot;Eaton Cards &amp; Envelopes, Multicolor&quot;</value>
+            <value>&quot;Eaton Cards &amp; Envelopes, Premium&quot;</value>
+            <value>&quot;Eaton Cards &amp; Envelopes, Recycled&quot;</value>
+            <value>&quot;Eaton Computer Printout Paper, 8.5 x 11&quot;</value>
+            <value>&quot;Eaton Computer Printout Paper, Multicolor&quot;</value>
+            <value>&quot;Eaton Computer Printout Paper, Premium&quot;</value>
+            <value>&quot;Eaton Computer Printout Paper, Recycled&quot;</value>
+            <value>&quot;Eaton Memo Slips, Multicolor&quot;</value>
+            <value>&quot;Eaton Memo Slips, Premium&quot;</value>
+            <value>&quot;Eaton Memo Slips, Recycled&quot;</value>
+            <value>&quot;Eaton Message Books, 8.5 x 11&quot;</value>
+            <value>&quot;Eaton Message Books, Multicolor&quot;</value>
+            <value>&quot;Eaton Message Books, Premium&quot;</value>
+            <value>&quot;Eaton Message Books, Recycled&quot;</value>
+            <value>&quot;Eaton Note Cards, 8.5 x 11&quot;</value>
+            <value>&quot;Eaton Note Cards, Multicolor&quot;</value>
+            <value>&quot;Eaton Note Cards, Premium&quot;</value>
+            <value>&quot;Eaton Parchment Paper, 8.5 x 11&quot;</value>
+            <value>&quot;Eaton Parchment Paper, Multicolor&quot;</value>
+            <value>&quot;Eaton Parchment Paper, Premium&quot;</value>
+            <value>&quot;Eaton Parchment Paper, Recycled&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Eldon&quot;'>
+            <value>&quot;Eldon Box, Blue&quot;</value>
+            <value>&quot;Eldon Box, Industrial&quot;</value>
+            <value>&quot;Eldon Box, Single Width&quot;</value>
+            <value>&quot;Eldon Box, Wire Frame&quot;</value>
+            <value>&quot;Eldon Clock, Black&quot;</value>
+            <value>&quot;Eldon Clock, Duo Pack&quot;</value>
+            <value>&quot;Eldon Clock, Durable&quot;</value>
+            <value>&quot;Eldon Clock, Erganomic&quot;</value>
+            <value>&quot;Eldon Door Stop, Black&quot;</value>
+            <value>&quot;Eldon Door Stop, Duo Pack&quot;</value>
+            <value>&quot;Eldon Door Stop, Durable&quot;</value>
+            <value>&quot;Eldon Door Stop, Erganomic&quot;</value>
+            <value>&quot;Eldon File Cart, Blue&quot;</value>
+            <value>&quot;Eldon File Cart, Industrial&quot;</value>
+            <value>&quot;Eldon File Cart, Single Width&quot;</value>
+            <value>&quot;Eldon Folders, Blue&quot;</value>
+            <value>&quot;Eldon Folders, Industrial&quot;</value>
+            <value>&quot;Eldon Folders, Single Width&quot;</value>
+            <value>&quot;Eldon Folders, Wire Frame&quot;</value>
+            <value>&quot;Eldon Frame, Black&quot;</value>
+            <value>&quot;Eldon Frame, Duo Pack&quot;</value>
+            <value>&quot;Eldon Frame, Durable&quot;</value>
+            <value>&quot;Eldon Frame, Erganomic&quot;</value>
+            <value>&quot;Eldon Light Bulb, Black&quot;</value>
+            <value>&quot;Eldon Light Bulb, Duo Pack&quot;</value>
+            <value>&quot;Eldon Light Bulb, Durable&quot;</value>
+            <value>&quot;Eldon Light Bulb, Erganomic&quot;</value>
+            <value>&quot;Eldon Lockers, Blue&quot;</value>
+            <value>&quot;Eldon Lockers, Industrial&quot;</value>
+            <value>&quot;Eldon Lockers, Single Width&quot;</value>
+            <value>&quot;Eldon Lockers, Wire Frame&quot;</value>
+            <value>&quot;Eldon Photo Frame, Black&quot;</value>
+            <value>&quot;Eldon Photo Frame, Duo Pack&quot;</value>
+            <value>&quot;Eldon Photo Frame, Durable&quot;</value>
+            <value>&quot;Eldon Photo Frame, Erganomic&quot;</value>
+            <value>&quot;Eldon Shelving, Blue&quot;</value>
+            <value>&quot;Eldon Shelving, Industrial&quot;</value>
+            <value>&quot;Eldon Shelving, Single Width&quot;</value>
+            <value>&quot;Eldon Shelving, Wire Frame&quot;</value>
+            <value>&quot;Eldon Stacking Tray, Black&quot;</value>
+            <value>&quot;Eldon Stacking Tray, Duo Pack&quot;</value>
+            <value>&quot;Eldon Stacking Tray, Durable&quot;</value>
+            <value>&quot;Eldon Stacking Tray, Erganomic&quot;</value>
+            <value>&quot;Eldon Trays, Blue&quot;</value>
+            <value>&quot;Eldon Trays, Industrial&quot;</value>
+            <value>&quot;Eldon Trays, Single Width&quot;</value>
+            <value>&quot;Eldon Trays, Wire Frame&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Elite&quot;'>
+            <value>&quot;Elite Box Cutter, Easy Grip&quot;</value>
+            <value>&quot;Elite Box Cutter, High Speed&quot;</value>
+            <value>&quot;Elite Box Cutter, Serrated&quot;</value>
+            <value>&quot;Elite Box Cutter, Steel&quot;</value>
+            <value>&quot;Elite Letter Opener, Easy Grip&quot;</value>
+            <value>&quot;Elite Letter Opener, High Speed&quot;</value>
+            <value>&quot;Elite Letter Opener, Steel&quot;</value>
+            <value>&quot;Elite Ruler, Easy Grip&quot;</value>
+            <value>&quot;Elite Ruler, High Speed&quot;</value>
+            <value>&quot;Elite Ruler, Serrated&quot;</value>
+            <value>&quot;Elite Ruler, Steel&quot;</value>
+            <value>&quot;Elite Scissors, Easy Grip&quot;</value>
+            <value>&quot;Elite Scissors, High Speed&quot;</value>
+            <value>&quot;Elite Scissors, Serrated&quot;</value>
+            <value>&quot;Elite Scissors, Steel&quot;</value>
+            <value>&quot;Elite Shears, Easy Grip&quot;</value>
+            <value>&quot;Elite Shears, High Speed&quot;</value>
+            <value>&quot;Elite Shears, Serrated&quot;</value>
+            <value>&quot;Elite Shears, Steel&quot;</value>
+            <value>&quot;Elite Trimmer, Easy Grip&quot;</value>
+            <value>&quot;Elite Trimmer, High Speed&quot;</value>
+            <value>&quot;Elite Trimmer, Serrated&quot;</value>
+            <value>&quot;Elite Trimmer, Steel&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Enermax&quot;'>
+            <value>&quot;Enermax Cards &amp; Envelopes, 8.5 x 11&quot;</value>
+            <value>&quot;Enermax Cards &amp; Envelopes, Multicolor&quot;</value>
+            <value>&quot;Enermax Cards &amp; Envelopes, Premium&quot;</value>
+            <value>&quot;Enermax Cards &amp; Envelopes, Recycled&quot;</value>
+            <value>&quot;Enermax Computer Printout Paper, 8.5 x 11&quot;</value>
+            <value>&quot;Enermax Computer Printout Paper, Multicolor&quot;</value>
+            <value>&quot;Enermax Computer Printout Paper, Premium&quot;</value>
+            <value>&quot;Enermax Computer Printout Paper, Recycled&quot;</value>
+            <value>&quot;Enermax Flash Drive, Bluetooth&quot;</value>
+            <value>&quot;Enermax Flash Drive, Erganomic&quot;</value>
+            <value>&quot;Enermax Flash Drive, Programmable&quot;</value>
+            <value>&quot;Enermax Flash Drive, USB&quot;</value>
+            <value>&quot;Enermax Keyboard, Bluetooth&quot;</value>
+            <value>&quot;Enermax Keyboard, Erganomic&quot;</value>
+            <value>&quot;Enermax Keyboard, Programmable&quot;</value>
+            <value>&quot;Enermax Keyboard, USB&quot;</value>
+            <value>&quot;Enermax Memo Slips, 8.5 x 11&quot;</value>
+            <value>&quot;Enermax Memo Slips, Multicolor&quot;</value>
+            <value>&quot;Enermax Memo Slips, Premium&quot;</value>
+            <value>&quot;Enermax Memo Slips, Recycled&quot;</value>
+            <value>&quot;Enermax Memory Card, Bluetooth&quot;</value>
+            <value>&quot;Enermax Memory Card, Erganomic&quot;</value>
+            <value>&quot;Enermax Memory Card, Programmable&quot;</value>
+            <value>&quot;Enermax Memory Card, USB&quot;</value>
+            <value>&quot;Enermax Message Books, 8.5 x 11&quot;</value>
+            <value>&quot;Enermax Message Books, Multicolor&quot;</value>
+            <value>&quot;Enermax Message Books, Premium&quot;</value>
+            <value>&quot;Enermax Message Books, Recycled&quot;</value>
+            <value>&quot;Enermax Mouse, Bluetooth&quot;</value>
+            <value>&quot;Enermax Mouse, Erganomic&quot;</value>
+            <value>&quot;Enermax Mouse, Programmable&quot;</value>
+            <value>&quot;Enermax Mouse, USB&quot;</value>
+            <value>&quot;Enermax Note Cards, 8.5 x 11&quot;</value>
+            <value>&quot;Enermax Note Cards, Multicolor&quot;</value>
+            <value>&quot;Enermax Note Cards, Premium&quot;</value>
+            <value>&quot;Enermax Numeric Keypad, Bluetooth&quot;</value>
+            <value>&quot;Enermax Numeric Keypad, Erganomic&quot;</value>
+            <value>&quot;Enermax Numeric Keypad, USB&quot;</value>
+            <value>&quot;Enermax Parchment Paper, 8.5 x 11&quot;</value>
+            <value>&quot;Enermax Parchment Paper, Multicolor&quot;</value>
+            <value>&quot;Enermax Parchment Paper, Premium&quot;</value>
+            <value>&quot;Enermax Parchment Paper, Recycled&quot;</value>
+            <value>&quot;Enermax Router, Bluetooth&quot;</value>
+            <value>&quot;Enermax Router, Erganomic&quot;</value>
+            <value>&quot;Enermax Router, Programmable&quot;</value>
+            <value>&quot;Enermax Router, USB&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Epson&quot;'>
+            <value>&quot;Epson Calculator, Durable&quot;</value>
+            <value>&quot;Epson Calculator, Red&quot;</value>
+            <value>&quot;Epson Calculator, White&quot;</value>
+            <value>&quot;Epson Calculator, Wireless&quot;</value>
+            <value>&quot;Epson Card Printer, Durable&quot;</value>
+            <value>&quot;Epson Card Printer, Red&quot;</value>
+            <value>&quot;Epson Card Printer, White&quot;</value>
+            <value>&quot;Epson Card Printer, Wireless&quot;</value>
+            <value>&quot;Epson Inkjet, White&quot;</value>
+            <value>&quot;Epson Inkjet, Wireless&quot;</value>
+            <value>&quot;Epson Phone, Durable&quot;</value>
+            <value>&quot;Epson Phone, Red&quot;</value>
+            <value>&quot;Epson Phone, White&quot;</value>
+            <value>&quot;Epson Phone, Wireless&quot;</value>
+            <value>&quot;Epson Printer, Durable&quot;</value>
+            <value>&quot;Epson Printer, Red&quot;</value>
+            <value>&quot;Epson Printer, White&quot;</value>
+            <value>&quot;Epson Printer, Wireless&quot;</value>
+            <value>&quot;Epson Receipt Printer, Durable&quot;</value>
+            <value>&quot;Epson Receipt Printer, Red&quot;</value>
+            <value>&quot;Epson Receipt Printer, White&quot;</value>
+            <value>&quot;Epson Receipt Printer, Wireless&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Fellowes&quot;'>
+            <value>&quot;Fellowes Box, Blue&quot;</value>
+            <value>&quot;Fellowes Box, Industrial&quot;</value>
+            <value>&quot;Fellowes Box, Single Width&quot;</value>
+            <value>&quot;Fellowes Box, Wire Frame&quot;</value>
+            <value>&quot;Fellowes File Cart, Blue&quot;</value>
+            <value>&quot;Fellowes File Cart, Industrial&quot;</value>
+            <value>&quot;Fellowes File Cart, Single Width&quot;</value>
+            <value>&quot;Fellowes File Cart, Wire Frame&quot;</value>
+            <value>&quot;Fellowes Folders, Blue&quot;</value>
+            <value>&quot;Fellowes Folders, Industrial&quot;</value>
+            <value>&quot;Fellowes Folders, Single Width&quot;</value>
+            <value>&quot;Fellowes Folders, Wire Frame&quot;</value>
+            <value>&quot;Fellowes Lockers, Blue&quot;</value>
+            <value>&quot;Fellowes Lockers, Industrial&quot;</value>
+            <value>&quot;Fellowes Lockers, Single Width&quot;</value>
+            <value>&quot;Fellowes Lockers, Wire Frame&quot;</value>
+            <value>&quot;Fellowes Shelving, Blue&quot;</value>
+            <value>&quot;Fellowes Shelving, Industrial&quot;</value>
+            <value>&quot;Fellowes Shelving, Single Width&quot;</value>
+            <value>&quot;Fellowes Shelving, Wire Frame&quot;</value>
+            <value>&quot;Fellowes Trays, Blue&quot;</value>
+            <value>&quot;Fellowes Trays, Industrial&quot;</value>
+            <value>&quot;Fellowes Trays, Single Width&quot;</value>
+            <value>&quot;Fellowes Trays, Wire Frame&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Fiskars&quot;'>
+            <value>&quot;Fiskars Box Cutter, Easy Grip&quot;</value>
+            <value>&quot;Fiskars Box Cutter, High Speed&quot;</value>
+            <value>&quot;Fiskars Box Cutter, Serrated&quot;</value>
+            <value>&quot;Fiskars Box Cutter, Steel&quot;</value>
+            <value>&quot;Fiskars Letter Opener, Easy Grip&quot;</value>
+            <value>&quot;Fiskars Letter Opener, High Speed&quot;</value>
+            <value>&quot;Fiskars Letter Opener, Steel&quot;</value>
+            <value>&quot;Fiskars Ruler, Easy Grip&quot;</value>
+            <value>&quot;Fiskars Ruler, High Speed&quot;</value>
+            <value>&quot;Fiskars Ruler, Serrated&quot;</value>
+            <value>&quot;Fiskars Ruler, Steel&quot;</value>
+            <value>&quot;Fiskars Scissors, Easy Grip&quot;</value>
+            <value>&quot;Fiskars Scissors, High Speed&quot;</value>
+            <value>&quot;Fiskars Scissors, Serrated&quot;</value>
+            <value>&quot;Fiskars Scissors, Steel&quot;</value>
+            <value>&quot;Fiskars Shears, Easy Grip&quot;</value>
+            <value>&quot;Fiskars Shears, High Speed&quot;</value>
+            <value>&quot;Fiskars Shears, Serrated&quot;</value>
+            <value>&quot;Fiskars Shears, Steel&quot;</value>
+            <value>&quot;Fiskars Trimmer, Easy Grip&quot;</value>
+            <value>&quot;Fiskars Trimmer, High Speed&quot;</value>
+            <value>&quot;Fiskars Trimmer, Serrated&quot;</value>
+            <value>&quot;Fiskars Trimmer, Steel&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;GlobeWeis&quot;'>
+            <value>&quot;GlobeWeis Business Envelopes, Recycled&quot;</value>
+            <value>&quot;GlobeWeis Business Envelopes, Security-Tint&quot;</value>
+            <value>&quot;GlobeWeis Business Envelopes, Set of 50&quot;</value>
+            <value>&quot;GlobeWeis Business Envelopes, with clear poly window&quot;</value>
+            <value>&quot;GlobeWeis Clasp Envelope, Recycled&quot;</value>
+            <value>&quot;GlobeWeis Clasp Envelope, Security-Tint&quot;</value>
+            <value>&quot;GlobeWeis Clasp Envelope, Set of 50&quot;</value>
+            <value>&quot;GlobeWeis Clasp Envelope, with clear poly window&quot;</value>
+            <value>&quot;GlobeWeis Interoffice Envelope, Recycled&quot;</value>
+            <value>&quot;GlobeWeis Interoffice Envelope, Security-Tint&quot;</value>
+            <value>&quot;GlobeWeis Interoffice Envelope, Set of 50&quot;</value>
+            <value>&quot;GlobeWeis Interoffice Envelope, with clear poly window&quot;</value>
+            <value>&quot;GlobeWeis Mailers, Recycled&quot;</value>
+            <value>&quot;GlobeWeis Mailers, Security-Tint&quot;</value>
+            <value>&quot;GlobeWeis Mailers, Set of 50&quot;</value>
+            <value>&quot;GlobeWeis Mailers, with clear poly window&quot;</value>
+            <value>&quot;GlobeWeis Manila Envelope, Recycled&quot;</value>
+            <value>&quot;GlobeWeis Manila Envelope, Security-Tint&quot;</value>
+            <value>&quot;GlobeWeis Manila Envelope, Set of 50&quot;</value>
+            <value>&quot;GlobeWeis Manila Envelope, with clear poly window&quot;</value>
+            <value>&quot;GlobeWeis Peel and Seal, Recycled&quot;</value>
+            <value>&quot;GlobeWeis Peel and Seal, Security-Tint&quot;</value>
+            <value>&quot;GlobeWeis Peel and Seal, Set of 50&quot;</value>
+            <value>&quot;GlobeWeis Peel and Seal, with clear poly window&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Green Bar&quot;'>
+            <value>&quot;Green Bar Cards &amp; Envelopes, 8.5 x 11&quot;</value>
+            <value>&quot;Green Bar Cards &amp; Envelopes, Multicolor&quot;</value>
+            <value>&quot;Green Bar Cards &amp; Envelopes, Premium&quot;</value>
+            <value>&quot;Green Bar Cards &amp; Envelopes, Recycled&quot;</value>
+            <value>&quot;Green Bar Computer Printout Paper, 8.5 x 11&quot;</value>
+            <value>&quot;Green Bar Computer Printout Paper, Multicolor&quot;</value>
+            <value>&quot;Green Bar Computer Printout Paper, Premium&quot;</value>
+            <value>&quot;Green Bar Computer Printout Paper, Recycled&quot;</value>
+            <value>&quot;Green Bar Memo Slips, 8.5 x 11&quot;</value>
+            <value>&quot;Green Bar Memo Slips, Multicolor&quot;</value>
+            <value>&quot;Green Bar Memo Slips, Premium&quot;</value>
+            <value>&quot;Green Bar Memo Slips, Recycled&quot;</value>
+            <value>&quot;Green Bar Message Books, 8.5 x 11&quot;</value>
+            <value>&quot;Green Bar Message Books, Multicolor&quot;</value>
+            <value>&quot;Green Bar Message Books, Premium&quot;</value>
+            <value>&quot;Green Bar Message Books, Recycled&quot;</value>
+            <value>&quot;Green Bar Note Cards, 8.5 x 11&quot;</value>
+            <value>&quot;Green Bar Note Cards, Multicolor&quot;</value>
+            <value>&quot;Green Bar Note Cards, Premium&quot;</value>
+            <value>&quot;Green Bar Parchment Paper, 8.5 x 11&quot;</value>
+            <value>&quot;Green Bar Parchment Paper, Multicolor&quot;</value>
+            <value>&quot;Green Bar Parchment Paper, Premium&quot;</value>
+            <value>&quot;Green Bar Parchment Paper, Recycled&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Hamilton Beach&quot;'>
+            <value>&quot;Hamilton Beach Blender, Black&quot;</value>
+            <value>&quot;Hamilton Beach Blender, Silver&quot;</value>
+            <value>&quot;Hamilton Beach Blender, White&quot;</value>
+            <value>&quot;Hamilton Beach Coffee Grinder, Black&quot;</value>
+            <value>&quot;Hamilton Beach Coffee Grinder, Red&quot;</value>
+            <value>&quot;Hamilton Beach Coffee Grinder, Silver&quot;</value>
+            <value>&quot;Hamilton Beach Coffee Grinder, White&quot;</value>
+            <value>&quot;Hamilton Beach Microwave, Black&quot;</value>
+            <value>&quot;Hamilton Beach Microwave, Red&quot;</value>
+            <value>&quot;Hamilton Beach Microwave, Silver&quot;</value>
+            <value>&quot;Hamilton Beach Microwave, White&quot;</value>
+            <value>&quot;Hamilton Beach Refrigerator, Black&quot;</value>
+            <value>&quot;Hamilton Beach Refrigerator, Red&quot;</value>
+            <value>&quot;Hamilton Beach Refrigerator, Silver&quot;</value>
+            <value>&quot;Hamilton Beach Refrigerator, White&quot;</value>
+            <value>&quot;Hamilton Beach Stove, Black&quot;</value>
+            <value>&quot;Hamilton Beach Stove, Red&quot;</value>
+            <value>&quot;Hamilton Beach Stove, Silver&quot;</value>
+            <value>&quot;Hamilton Beach Stove, White&quot;</value>
+            <value>&quot;Hamilton Beach Toaster, Black&quot;</value>
+            <value>&quot;Hamilton Beach Toaster, Red&quot;</value>
+            <value>&quot;Hamilton Beach Toaster, Silver&quot;</value>
+            <value>&quot;Hamilton Beach Toaster, White&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Harbour Creations&quot;'>
+            <value>&quot;Harbour Creations Bag Chairs, Adjustable&quot;</value>
+            <value>&quot;Harbour Creations Bag Chairs, Black&quot;</value>
+            <value>&quot;Harbour Creations Bag Chairs, Red&quot;</value>
+            <value>&quot;Harbour Creations Bag Chairs, Set of Two&quot;</value>
+            <value>&quot;Harbour Creations Chairmat, Adjustable&quot;</value>
+            <value>&quot;Harbour Creations Chairmat, Black&quot;</value>
+            <value>&quot;Harbour Creations Chairmat, Red&quot;</value>
+            <value>&quot;Harbour Creations Chairmat, Set of Two&quot;</value>
+            <value>&quot;Harbour Creations Color Coded Labels, 5000 Label Set&quot;</value>
+            <value>&quot;Harbour Creations Color Coded Labels, Adjustable&quot;</value>
+            <value>&quot;Harbour Creations Color Coded Labels, Alphabetical&quot;</value>
+            <value>&quot;Harbour Creations Color Coded Labels, Laser Printer Compatible&quot;</value>
+            <value>&quot;Harbour Creations Executive Leather Armchair, Adjustable&quot;</value>
+            <value>&quot;Harbour Creations Executive Leather Armchair, Black&quot;</value>
+            <value>&quot;Harbour Creations Executive Leather Armchair, Red&quot;</value>
+            <value>&quot;Harbour Creations File Folder Labels, 5000 Label Set&quot;</value>
+            <value>&quot;Harbour Creations File Folder Labels, Adjustable&quot;</value>
+            <value>&quot;Harbour Creations File Folder Labels, Alphabetical&quot;</value>
+            <value>&quot;Harbour Creations File Folder Labels, Laser Printer Compatible&quot;</value>
+            <value>&quot;Harbour Creations Legal Exhibit Labels, 5000 Label Set&quot;</value>
+            <value>&quot;Harbour Creations Legal Exhibit Labels, Adjustable&quot;</value>
+            <value>&quot;Harbour Creations Legal Exhibit Labels, Alphabetical&quot;</value>
+            <value>&quot;Harbour Creations Legal Exhibit Labels, Laser Printer Compatible&quot;</value>
+            <value>&quot;Harbour Creations Removable Labels, 5000 Label Set&quot;</value>
+            <value>&quot;Harbour Creations Removable Labels, Adjustable&quot;</value>
+            <value>&quot;Harbour Creations Removable Labels, Laser Printer Compatible&quot;</value>
+            <value>&quot;Harbour Creations Rocking Chair, Adjustable&quot;</value>
+            <value>&quot;Harbour Creations Rocking Chair, Black&quot;</value>
+            <value>&quot;Harbour Creations Rocking Chair, Red&quot;</value>
+            <value>&quot;Harbour Creations Rocking Chair, Set of Two&quot;</value>
+            <value>&quot;Harbour Creations Round Labels, 5000 Label Set&quot;</value>
+            <value>&quot;Harbour Creations Round Labels, Adjustable&quot;</value>
+            <value>&quot;Harbour Creations Round Labels, Alphabetical&quot;</value>
+            <value>&quot;Harbour Creations Round Labels, Laser Printer Compatible&quot;</value>
+            <value>&quot;Harbour Creations Shipping Labels, 5000 Label Set&quot;</value>
+            <value>&quot;Harbour Creations Shipping Labels, Adjustable&quot;</value>
+            <value>&quot;Harbour Creations Shipping Labels, Alphabetical&quot;</value>
+            <value>&quot;Harbour Creations Shipping Labels, Laser Printer Compatible&quot;</value>
+            <value>&quot;Harbour Creations Steel Folding Chair, Adjustable&quot;</value>
+            <value>&quot;Harbour Creations Steel Folding Chair, Black&quot;</value>
+            <value>&quot;Harbour Creations Steel Folding Chair, Red&quot;</value>
+            <value>&quot;Harbour Creations Steel Folding Chair, Set of Two&quot;</value>
+            <value>&quot;Harbour Creations Swivel Stool, Adjustable&quot;</value>
+            <value>&quot;Harbour Creations Swivel Stool, Black&quot;</value>
+            <value>&quot;Harbour Creations Swivel Stool, Red&quot;</value>
+            <value>&quot;Harbour Creations Swivel Stool, Set of Two&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Hewlett&quot;'>
+            <value>&quot;Hewlett Copy Machine, Color&quot;</value>
+            <value>&quot;Hewlett Copy Machine, Laser&quot;</value>
+            <value>&quot;Hewlett Fax and Copier, Color&quot;</value>
+            <value>&quot;Hewlett Fax and Copier, Digital&quot;</value>
+            <value>&quot;Hewlett Fax and Copier, High-Speed&quot;</value>
+            <value>&quot;Hewlett Fax and Copier, Laser&quot;</value>
+            <value>&quot;Hewlett Fax Machine, Color&quot;</value>
+            <value>&quot;Hewlett Fax Machine, Digital&quot;</value>
+            <value>&quot;Hewlett Fax Machine, High-Speed&quot;</value>
+            <value>&quot;Hewlett Fax Machine, Laser&quot;</value>
+            <value>&quot;Hewlett Ink, Color&quot;</value>
+            <value>&quot;Hewlett Ink, Digital&quot;</value>
+            <value>&quot;Hewlett Ink, High-Speed&quot;</value>
+            <value>&quot;Hewlett Ink, Laser&quot;</value>
+            <value>&quot;Hewlett Personal Copier, Color&quot;</value>
+            <value>&quot;Hewlett Personal Copier, Digital&quot;</value>
+            <value>&quot;Hewlett Personal Copier, High-Speed&quot;</value>
+            <value>&quot;Hewlett Personal Copier, Laser&quot;</value>
+            <value>&quot;Hewlett Wireless Fax, Color&quot;</value>
+            <value>&quot;Hewlett Wireless Fax, Digital&quot;</value>
+            <value>&quot;Hewlett Wireless Fax, High-Speed&quot;</value>
+            <value>&quot;Hewlett Wireless Fax, Laser&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Hon&quot;'>
+            <value>&quot;Hon Bag Chairs, Adjustable&quot;</value>
+            <value>&quot;Hon Bag Chairs, Black&quot;</value>
+            <value>&quot;Hon Bag Chairs, Red&quot;</value>
+            <value>&quot;Hon Bag Chairs, Set of Two&quot;</value>
+            <value>&quot;Hon Chairmat, Adjustable&quot;</value>
+            <value>&quot;Hon Chairmat, Black&quot;</value>
+            <value>&quot;Hon Chairmat, Red&quot;</value>
+            <value>&quot;Hon Chairmat, Set of Two&quot;</value>
+            <value>&quot;Hon Coffee Table, Adjustable Height&quot;</value>
+            <value>&quot;Hon Coffee Table, Fully Assembled&quot;</value>
+            <value>&quot;Hon Coffee Table, with Bottom Storage&quot;</value>
+            <value>&quot;Hon Color Coded Labels, 5000 Label Set&quot;</value>
+            <value>&quot;Hon Color Coded Labels, Adjustable&quot;</value>
+            <value>&quot;Hon Color Coded Labels, Alphabetical&quot;</value>
+            <value>&quot;Hon Color Coded Labels, Laser Printer Compatible&quot;</value>
+            <value>&quot;Hon Computer Table, Adjustable Height&quot;</value>
+            <value>&quot;Hon Computer Table, Fully Assembled&quot;</value>
+            <value>&quot;Hon Computer Table, with Bottom Storage&quot;</value>
+            <value>&quot;Hon Conference Table, Adjustable Height&quot;</value>
+            <value>&quot;Hon Conference Table, Rectangular&quot;</value>
+            <value>&quot;Hon Executive Leather Armchair, Adjustable&quot;</value>
+            <value>&quot;Hon Executive Leather Armchair, Black&quot;</value>
+            <value>&quot;Hon Executive Leather Armchair, Red&quot;</value>
+            <value>&quot;Hon File Folder Labels, 5000 Label Set&quot;</value>
+            <value>&quot;Hon File Folder Labels, Adjustable&quot;</value>
+            <value>&quot;Hon File Folder Labels, Alphabetical&quot;</value>
+            <value>&quot;Hon File Folder Labels, Laser Printer Compatible&quot;</value>
+            <value>&quot;Hon Legal Exhibit Labels, 5000 Label Set&quot;</value>
+            <value>&quot;Hon Legal Exhibit Labels, Adjustable&quot;</value>
+            <value>&quot;Hon Legal Exhibit Labels, Alphabetical&quot;</value>
+            <value>&quot;Hon Legal Exhibit Labels, Laser Printer Compatible&quot;</value>
+            <value>&quot;Hon Removable Labels, 5000 Label Set&quot;</value>
+            <value>&quot;Hon Removable Labels, Adjustable&quot;</value>
+            <value>&quot;Hon Removable Labels, Laser Printer Compatible&quot;</value>
+            <value>&quot;Hon Rocking Chair, Adjustable&quot;</value>
+            <value>&quot;Hon Rocking Chair, Black&quot;</value>
+            <value>&quot;Hon Rocking Chair, Red&quot;</value>
+            <value>&quot;Hon Rocking Chair, Set of Two&quot;</value>
+            <value>&quot;Hon Round Labels, 5000 Label Set&quot;</value>
+            <value>&quot;Hon Round Labels, Adjustable&quot;</value>
+            <value>&quot;Hon Round Labels, Alphabetical&quot;</value>
+            <value>&quot;Hon Round Labels, Laser Printer Compatible&quot;</value>
+            <value>&quot;Hon Round Table, Rectangular&quot;</value>
+            <value>&quot;Hon Round Table, with Bottom Storage&quot;</value>
+            <value>&quot;Hon Shipping Labels, 5000 Label Set&quot;</value>
+            <value>&quot;Hon Shipping Labels, Adjustable&quot;</value>
+            <value>&quot;Hon Shipping Labels, Alphabetical&quot;</value>
+            <value>&quot;Hon Shipping Labels, Laser Printer Compatible&quot;</value>
+            <value>&quot;Hon Steel Folding Chair, Adjustable&quot;</value>
+            <value>&quot;Hon Steel Folding Chair, Black&quot;</value>
+            <value>&quot;Hon Steel Folding Chair, Red&quot;</value>
+            <value>&quot;Hon Steel Folding Chair, Set of Two&quot;</value>
+            <value>&quot;Hon Swivel Stool, Adjustable&quot;</value>
+            <value>&quot;Hon Swivel Stool, Black&quot;</value>
+            <value>&quot;Hon Swivel Stool, Red&quot;</value>
+            <value>&quot;Hon Swivel Stool, Set of Two&quot;</value>
+            <value>&quot;Hon Training Table, Adjustable Height&quot;</value>
+            <value>&quot;Hon Training Table, Fully Assembled&quot;</value>
+            <value>&quot;Hon Training Table, with Bottom Storage&quot;</value>
+            <value>&quot;Hon Wood Table, Fully Assembled&quot;</value>
+            <value>&quot;Hon Wood Table, Rectangular&quot;</value>
+            <value>&quot;Hon Wood Table, with Bottom Storage&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Hoover&quot;'>
+            <value>&quot;Hoover Blender, Black&quot;</value>
+            <value>&quot;Hoover Blender, Silver&quot;</value>
+            <value>&quot;Hoover Blender, White&quot;</value>
+            <value>&quot;Hoover Coffee Grinder, Black&quot;</value>
+            <value>&quot;Hoover Coffee Grinder, Red&quot;</value>
+            <value>&quot;Hoover Coffee Grinder, Silver&quot;</value>
+            <value>&quot;Hoover Coffee Grinder, White&quot;</value>
+            <value>&quot;Hoover Microwave, Black&quot;</value>
+            <value>&quot;Hoover Microwave, Red&quot;</value>
+            <value>&quot;Hoover Microwave, Silver&quot;</value>
+            <value>&quot;Hoover Microwave, White&quot;</value>
+            <value>&quot;Hoover Refrigerator, Black&quot;</value>
+            <value>&quot;Hoover Refrigerator, Red&quot;</value>
+            <value>&quot;Hoover Refrigerator, Silver&quot;</value>
+            <value>&quot;Hoover Refrigerator, White&quot;</value>
+            <value>&quot;Hoover Stove, Black&quot;</value>
+            <value>&quot;Hoover Stove, Red&quot;</value>
+            <value>&quot;Hoover Stove, Silver&quot;</value>
+            <value>&quot;Hoover Stove, White&quot;</value>
+            <value>&quot;Hoover Toaster, Black&quot;</value>
+            <value>&quot;Hoover Toaster, Red&quot;</value>
+            <value>&quot;Hoover Toaster, Silver&quot;</value>
+            <value>&quot;Hoover Toaster, White&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;HP&quot;'>
+            <value>&quot;HP Copy Machine, Color&quot;</value>
+            <value>&quot;HP Copy Machine, High-Speed&quot;</value>
+            <value>&quot;HP Copy Machine, Laser&quot;</value>
+            <value>&quot;HP Fax and Copier, Color&quot;</value>
+            <value>&quot;HP Fax and Copier, Digital&quot;</value>
+            <value>&quot;HP Fax and Copier, High-Speed&quot;</value>
+            <value>&quot;HP Fax and Copier, Laser&quot;</value>
+            <value>&quot;HP Fax Machine, Color&quot;</value>
+            <value>&quot;HP Fax Machine, Digital&quot;</value>
+            <value>&quot;HP Fax Machine, High-Speed&quot;</value>
+            <value>&quot;HP Fax Machine, Laser&quot;</value>
+            <value>&quot;HP Ink, Color&quot;</value>
+            <value>&quot;HP Ink, Digital&quot;</value>
+            <value>&quot;HP Ink, High-Speed&quot;</value>
+            <value>&quot;HP Ink, Laser&quot;</value>
+            <value>&quot;HP Personal Copier, Color&quot;</value>
+            <value>&quot;HP Personal Copier, Digital&quot;</value>
+            <value>&quot;HP Personal Copier, High-Speed&quot;</value>
+            <value>&quot;HP Personal Copier, Laser&quot;</value>
+            <value>&quot;HP Wireless Fax, Color&quot;</value>
+            <value>&quot;HP Wireless Fax, Digital&quot;</value>
+            <value>&quot;HP Wireless Fax, High-Speed&quot;</value>
+            <value>&quot;HP Wireless Fax, Laser&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Ikea&quot;'>
+            <value>&quot;Ikea 3-Shelf Cabinet, Metal&quot;</value>
+            <value>&quot;Ikea 3-Shelf Cabinet, Mobile&quot;</value>
+            <value>&quot;Ikea 3-Shelf Cabinet, Pine&quot;</value>
+            <value>&quot;Ikea 3-Shelf Cabinet, Traditional&quot;</value>
+            <value>&quot;Ikea Classic Bookcase, Metal&quot;</value>
+            <value>&quot;Ikea Classic Bookcase, Mobile&quot;</value>
+            <value>&quot;Ikea Classic Bookcase, Pine&quot;</value>
+            <value>&quot;Ikea Classic Bookcase, Traditional&quot;</value>
+            <value>&quot;Ikea Corner Shelving, Metal&quot;</value>
+            <value>&quot;Ikea Corner Shelving, Mobile&quot;</value>
+            <value>&quot;Ikea Corner Shelving, Pine&quot;</value>
+            <value>&quot;Ikea Corner Shelving, Traditional&quot;</value>
+            <value>&quot;Ikea Floating Shelf Set, Metal&quot;</value>
+            <value>&quot;Ikea Floating Shelf Set, Mobile&quot;</value>
+            <value>&quot;Ikea Floating Shelf Set, Pine&quot;</value>
+            <value>&quot;Ikea Floating Shelf Set, Traditional&quot;</value>
+            <value>&quot;Ikea Library with Doors, Metal&quot;</value>
+            <value>&quot;Ikea Library with Doors, Mobile&quot;</value>
+            <value>&quot;Ikea Library with Doors, Pine&quot;</value>
+            <value>&quot;Ikea Library with Doors, Traditional&quot;</value>
+            <value>&quot;Ikea Stackable Bookrack, Metal&quot;</value>
+            <value>&quot;Ikea Stackable Bookrack, Mobile&quot;</value>
+            <value>&quot;Ikea Stackable Bookrack, Pine&quot;</value>
+            <value>&quot;Ikea Stackable Bookrack, Traditional&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Jiffy&quot;'>
+            <value>&quot;Jiffy Business Envelopes, Recycled&quot;</value>
+            <value>&quot;Jiffy Business Envelopes, Security-Tint&quot;</value>
+            <value>&quot;Jiffy Business Envelopes, Set of 50&quot;</value>
+            <value>&quot;Jiffy Clasp Envelope, Recycled&quot;</value>
+            <value>&quot;Jiffy Clasp Envelope, Security-Tint&quot;</value>
+            <value>&quot;Jiffy Clasp Envelope, Set of 50&quot;</value>
+            <value>&quot;Jiffy Clasp Envelope, with clear poly window&quot;</value>
+            <value>&quot;Jiffy Interoffice Envelope, Recycled&quot;</value>
+            <value>&quot;Jiffy Interoffice Envelope, Security-Tint&quot;</value>
+            <value>&quot;Jiffy Interoffice Envelope, Set of 50&quot;</value>
+            <value>&quot;Jiffy Interoffice Envelope, with clear poly window&quot;</value>
+            <value>&quot;Jiffy Mailers, Recycled&quot;</value>
+            <value>&quot;Jiffy Mailers, Security-Tint&quot;</value>
+            <value>&quot;Jiffy Mailers, Set of 50&quot;</value>
+            <value>&quot;Jiffy Mailers, with clear poly window&quot;</value>
+            <value>&quot;Jiffy Manila Envelope, Recycled&quot;</value>
+            <value>&quot;Jiffy Manila Envelope, Security-Tint&quot;</value>
+            <value>&quot;Jiffy Manila Envelope, Set of 50&quot;</value>
+            <value>&quot;Jiffy Manila Envelope, with clear poly window&quot;</value>
+            <value>&quot;Jiffy Peel and Seal, Recycled&quot;</value>
+            <value>&quot;Jiffy Peel and Seal, Security-Tint&quot;</value>
+            <value>&quot;Jiffy Peel and Seal, Set of 50&quot;</value>
+            <value>&quot;Jiffy Peel and Seal, with clear poly window&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;KitchenAid&quot;'>
+            <value>&quot;KitchenAid Blender, Black&quot;</value>
+            <value>&quot;KitchenAid Blender, Silver&quot;</value>
+            <value>&quot;KitchenAid Coffee Grinder, Black&quot;</value>
+            <value>&quot;KitchenAid Coffee Grinder, Red&quot;</value>
+            <value>&quot;KitchenAid Coffee Grinder, Silver&quot;</value>
+            <value>&quot;KitchenAid Coffee Grinder, White&quot;</value>
+            <value>&quot;KitchenAid Microwave, Black&quot;</value>
+            <value>&quot;KitchenAid Microwave, Red&quot;</value>
+            <value>&quot;KitchenAid Microwave, Silver&quot;</value>
+            <value>&quot;KitchenAid Microwave, White&quot;</value>
+            <value>&quot;KitchenAid Refrigerator, Black&quot;</value>
+            <value>&quot;KitchenAid Refrigerator, Red&quot;</value>
+            <value>&quot;KitchenAid Refrigerator, Silver&quot;</value>
+            <value>&quot;KitchenAid Refrigerator, White&quot;</value>
+            <value>&quot;KitchenAid Stove, Black&quot;</value>
+            <value>&quot;KitchenAid Stove, Red&quot;</value>
+            <value>&quot;KitchenAid Stove, Silver&quot;</value>
+            <value>&quot;KitchenAid Stove, White&quot;</value>
+            <value>&quot;KitchenAid Toaster, Black&quot;</value>
+            <value>&quot;KitchenAid Toaster, Red&quot;</value>
+            <value>&quot;KitchenAid Toaster, Silver&quot;</value>
+            <value>&quot;KitchenAid Toaster, White&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Kleencut&quot;'>
+            <value>&quot;Kleencut Box Cutter, Easy Grip&quot;</value>
+            <value>&quot;Kleencut Box Cutter, High Speed&quot;</value>
+            <value>&quot;Kleencut Box Cutter, Serrated&quot;</value>
+            <value>&quot;Kleencut Box Cutter, Steel&quot;</value>
+            <value>&quot;Kleencut Letter Opener, Easy Grip&quot;</value>
+            <value>&quot;Kleencut Letter Opener, High Speed&quot;</value>
+            <value>&quot;Kleencut Letter Opener, Steel&quot;</value>
+            <value>&quot;Kleencut Ruler, Easy Grip&quot;</value>
+            <value>&quot;Kleencut Ruler, High Speed&quot;</value>
+            <value>&quot;Kleencut Ruler, Serrated&quot;</value>
+            <value>&quot;Kleencut Ruler, Steel&quot;</value>
+            <value>&quot;Kleencut Scissors, Easy Grip&quot;</value>
+            <value>&quot;Kleencut Scissors, High Speed&quot;</value>
+            <value>&quot;Kleencut Scissors, Serrated&quot;</value>
+            <value>&quot;Kleencut Scissors, Steel&quot;</value>
+            <value>&quot;Kleencut Shears, Easy Grip&quot;</value>
+            <value>&quot;Kleencut Shears, High Speed&quot;</value>
+            <value>&quot;Kleencut Shears, Serrated&quot;</value>
+            <value>&quot;Kleencut Shears, Steel&quot;</value>
+            <value>&quot;Kleencut Trimmer, Easy Grip&quot;</value>
+            <value>&quot;Kleencut Trimmer, High Speed&quot;</value>
+            <value>&quot;Kleencut Trimmer, Serrated&quot;</value>
+            <value>&quot;Kleencut Trimmer, Steel&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Konica&quot;'>
+            <value>&quot;Konica Calculator, Durable&quot;</value>
+            <value>&quot;Konica Calculator, Red&quot;</value>
+            <value>&quot;Konica Calculator, White&quot;</value>
+            <value>&quot;Konica Calculator, Wireless&quot;</value>
+            <value>&quot;Konica Card Printer, Durable&quot;</value>
+            <value>&quot;Konica Card Printer, Red&quot;</value>
+            <value>&quot;Konica Card Printer, White&quot;</value>
+            <value>&quot;Konica Card Printer, Wireless&quot;</value>
+            <value>&quot;Konica Inkjet, Durable&quot;</value>
+            <value>&quot;Konica Inkjet, White&quot;</value>
+            <value>&quot;Konica Inkjet, Wireless&quot;</value>
+            <value>&quot;Konica Phone, Durable&quot;</value>
+            <value>&quot;Konica Phone, Red&quot;</value>
+            <value>&quot;Konica Phone, White&quot;</value>
+            <value>&quot;Konica Phone, Wireless&quot;</value>
+            <value>&quot;Konica Printer, Durable&quot;</value>
+            <value>&quot;Konica Printer, Red&quot;</value>
+            <value>&quot;Konica Printer, White&quot;</value>
+            <value>&quot;Konica Printer, Wireless&quot;</value>
+            <value>&quot;Konica Receipt Printer, Durable&quot;</value>
+            <value>&quot;Konica Receipt Printer, Red&quot;</value>
+            <value>&quot;Konica Receipt Printer, White&quot;</value>
+            <value>&quot;Konica Receipt Printer, Wireless&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Kraft&quot;'>
+            <value>&quot;Kraft Business Envelopes, Recycled&quot;</value>
+            <value>&quot;Kraft Business Envelopes, Security-Tint&quot;</value>
+            <value>&quot;Kraft Business Envelopes, Set of 50&quot;</value>
+            <value>&quot;Kraft Clasp Envelope, Recycled&quot;</value>
+            <value>&quot;Kraft Clasp Envelope, Security-Tint&quot;</value>
+            <value>&quot;Kraft Clasp Envelope, Set of 50&quot;</value>
+            <value>&quot;Kraft Clasp Envelope, with clear poly window&quot;</value>
+            <value>&quot;Kraft Interoffice Envelope, Recycled&quot;</value>
+            <value>&quot;Kraft Interoffice Envelope, Security-Tint&quot;</value>
+            <value>&quot;Kraft Interoffice Envelope, Set of 50&quot;</value>
+            <value>&quot;Kraft Interoffice Envelope, with clear poly window&quot;</value>
+            <value>&quot;Kraft Mailers, Recycled&quot;</value>
+            <value>&quot;Kraft Mailers, Security-Tint&quot;</value>
+            <value>&quot;Kraft Mailers, Set of 50&quot;</value>
+            <value>&quot;Kraft Mailers, with clear poly window&quot;</value>
+            <value>&quot;Kraft Manila Envelope, Recycled&quot;</value>
+            <value>&quot;Kraft Manila Envelope, Security-Tint&quot;</value>
+            <value>&quot;Kraft Manila Envelope, Set of 50&quot;</value>
+            <value>&quot;Kraft Manila Envelope, with clear poly window&quot;</value>
+            <value>&quot;Kraft Peel and Seal, Recycled&quot;</value>
+            <value>&quot;Kraft Peel and Seal, Security-Tint&quot;</value>
+            <value>&quot;Kraft Peel and Seal, Set of 50&quot;</value>
+            <value>&quot;Kraft Peel and Seal, with clear poly window&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Lesro&quot;'>
+            <value>&quot;Lesro Coffee Table, Adjustable Height&quot;</value>
+            <value>&quot;Lesro Coffee Table, Fully Assembled&quot;</value>
+            <value>&quot;Lesro Coffee Table, Rectangular&quot;</value>
+            <value>&quot;Lesro Coffee Table, with Bottom Storage&quot;</value>
+            <value>&quot;Lesro Computer Table, Adjustable Height&quot;</value>
+            <value>&quot;Lesro Computer Table, with Bottom Storage&quot;</value>
+            <value>&quot;Lesro Conference Table, Adjustable Height&quot;</value>
+            <value>&quot;Lesro Conference Table, Fully Assembled&quot;</value>
+            <value>&quot;Lesro Conference Table, Rectangular&quot;</value>
+            <value>&quot;Lesro Conference Table, with Bottom Storage&quot;</value>
+            <value>&quot;Lesro Round Table, Adjustable Height&quot;</value>
+            <value>&quot;Lesro Round Table, Fully Assembled&quot;</value>
+            <value>&quot;Lesro Round Table, Rectangular&quot;</value>
+            <value>&quot;Lesro Round Table, with Bottom Storage&quot;</value>
+            <value>&quot;Lesro Training Table, Adjustable Height&quot;</value>
+            <value>&quot;Lesro Training Table, Fully Assembled&quot;</value>
+            <value>&quot;Lesro Training Table, Rectangular&quot;</value>
+            <value>&quot;Lesro Training Table, with Bottom Storage&quot;</value>
+            <value>&quot;Lesro Wood Table, Adjustable Height&quot;</value>
+            <value>&quot;Lesro Wood Table, Fully Assembled&quot;</value>
+            <value>&quot;Lesro Wood Table, Rectangular&quot;</value>
+            <value>&quot;Lesro Wood Table, with Bottom Storage&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Logitech&quot;'>
+            <value>&quot;Logitech Flash Drive, Bluetooth&quot;</value>
+            <value>&quot;Logitech Flash Drive, Erganomic&quot;</value>
+            <value>&quot;Logitech Flash Drive, Programmable&quot;</value>
+            <value>&quot;Logitech Flash Drive, USB&quot;</value>
+            <value>&quot;Logitech Keyboard, Bluetooth&quot;</value>
+            <value>&quot;Logitech Keyboard, Erganomic&quot;</value>
+            <value>&quot;Logitech Keyboard, Programmable&quot;</value>
+            <value>&quot;Logitech Keyboard, USB&quot;</value>
+            <value>&quot;Logitech Memory Card, Bluetooth&quot;</value>
+            <value>&quot;Logitech Memory Card, Erganomic&quot;</value>
+            <value>&quot;Logitech Memory Card, Programmable&quot;</value>
+            <value>&quot;Logitech Memory Card, USB&quot;</value>
+            <value>&quot;Logitech Mouse, Bluetooth&quot;</value>
+            <value>&quot;Logitech Mouse, Erganomic&quot;</value>
+            <value>&quot;Logitech Mouse, Programmable&quot;</value>
+            <value>&quot;Logitech Mouse, USB&quot;</value>
+            <value>&quot;Logitech Numeric Keypad, Bluetooth&quot;</value>
+            <value>&quot;Logitech Numeric Keypad, Erganomic&quot;</value>
+            <value>&quot;Logitech Numeric Keypad, Programmable&quot;</value>
+            <value>&quot;Logitech Numeric Keypad, USB&quot;</value>
+            <value>&quot;Logitech Router, Bluetooth&quot;</value>
+            <value>&quot;Logitech Router, Erganomic&quot;</value>
+            <value>&quot;Logitech Router, Programmable&quot;</value>
+            <value>&quot;Logitech Router, USB&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Memorex&quot;'>
+            <value>&quot;Memorex Flash Drive, Bluetooth&quot;</value>
+            <value>&quot;Memorex Flash Drive, Erganomic&quot;</value>
+            <value>&quot;Memorex Flash Drive, Programmable&quot;</value>
+            <value>&quot;Memorex Flash Drive, USB&quot;</value>
+            <value>&quot;Memorex Keyboard, Bluetooth&quot;</value>
+            <value>&quot;Memorex Keyboard, Erganomic&quot;</value>
+            <value>&quot;Memorex Keyboard, Programmable&quot;</value>
+            <value>&quot;Memorex Keyboard, USB&quot;</value>
+            <value>&quot;Memorex Memory Card, Bluetooth&quot;</value>
+            <value>&quot;Memorex Memory Card, Erganomic&quot;</value>
+            <value>&quot;Memorex Memory Card, Programmable&quot;</value>
+            <value>&quot;Memorex Memory Card, USB&quot;</value>
+            <value>&quot;Memorex Mouse, Bluetooth&quot;</value>
+            <value>&quot;Memorex Mouse, Erganomic&quot;</value>
+            <value>&quot;Memorex Mouse, Programmable&quot;</value>
+            <value>&quot;Memorex Mouse, USB&quot;</value>
+            <value>&quot;Memorex Numeric Keypad, Bluetooth&quot;</value>
+            <value>&quot;Memorex Numeric Keypad, Erganomic&quot;</value>
+            <value>&quot;Memorex Numeric Keypad, USB&quot;</value>
+            <value>&quot;Memorex Router, Bluetooth&quot;</value>
+            <value>&quot;Memorex Router, Erganomic&quot;</value>
+            <value>&quot;Memorex Router, Programmable&quot;</value>
+            <value>&quot;Memorex Router, USB&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Motorola&quot;'>
+            <value>&quot;Motorola Audio Dock, Cordless&quot;</value>
+            <value>&quot;Motorola Audio Dock, Full Size&quot;</value>
+            <value>&quot;Motorola Audio Dock, VoIP&quot;</value>
+            <value>&quot;Motorola Audio Dock, with Caller ID&quot;</value>
+            <value>&quot;Motorola Headset, Cordless&quot;</value>
+            <value>&quot;Motorola Headset, Full Size&quot;</value>
+            <value>&quot;Motorola Headset, VoIP&quot;</value>
+            <value>&quot;Motorola Headset, with Caller ID&quot;</value>
+            <value>&quot;Motorola Office Telephone, Cordless&quot;</value>
+            <value>&quot;Motorola Office Telephone, Full Size&quot;</value>
+            <value>&quot;Motorola Office Telephone, VoIP&quot;</value>
+            <value>&quot;Motorola Office Telephone, with Caller ID&quot;</value>
+            <value>&quot;Motorola Signal Booster, Cordless&quot;</value>
+            <value>&quot;Motorola Signal Booster, Full Size&quot;</value>
+            <value>&quot;Motorola Signal Booster, VoIP&quot;</value>
+            <value>&quot;Motorola Signal Booster, with Caller ID&quot;</value>
+            <value>&quot;Motorola Smart Phone, Cordless&quot;</value>
+            <value>&quot;Motorola Smart Phone, Full Size&quot;</value>
+            <value>&quot;Motorola Smart Phone, with Caller ID&quot;</value>
+            <value>&quot;Motorola Speaker Phone, Cordless&quot;</value>
+            <value>&quot;Motorola Speaker Phone, Full Size&quot;</value>
+            <value>&quot;Motorola Speaker Phone, VoIP&quot;</value>
+            <value>&quot;Motorola Speaker Phone, with Caller ID&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Nokia&quot;'>
+            <value>&quot;Nokia Audio Dock, Cordless&quot;</value>
+            <value>&quot;Nokia Audio Dock, Full Size&quot;</value>
+            <value>&quot;Nokia Audio Dock, VoIP&quot;</value>
+            <value>&quot;Nokia Audio Dock, with Caller ID&quot;</value>
+            <value>&quot;Nokia Headset, Cordless&quot;</value>
+            <value>&quot;Nokia Headset, Full Size&quot;</value>
+            <value>&quot;Nokia Headset, VoIP&quot;</value>
+            <value>&quot;Nokia Headset, with Caller ID&quot;</value>
+            <value>&quot;Nokia Office Telephone, Cordless&quot;</value>
+            <value>&quot;Nokia Office Telephone, Full Size&quot;</value>
+            <value>&quot;Nokia Office Telephone, VoIP&quot;</value>
+            <value>&quot;Nokia Office Telephone, with Caller ID&quot;</value>
+            <value>&quot;Nokia Signal Booster, Cordless&quot;</value>
+            <value>&quot;Nokia Signal Booster, Full Size&quot;</value>
+            <value>&quot;Nokia Signal Booster, VoIP&quot;</value>
+            <value>&quot;Nokia Signal Booster, with Caller ID&quot;</value>
+            <value>&quot;Nokia Smart Phone, Cordless&quot;</value>
+            <value>&quot;Nokia Smart Phone, Full Size&quot;</value>
+            <value>&quot;Nokia Smart Phone, with Caller ID&quot;</value>
+            <value>&quot;Nokia Speaker Phone, Cordless&quot;</value>
+            <value>&quot;Nokia Speaker Phone, Full Size&quot;</value>
+            <value>&quot;Nokia Speaker Phone, VoIP&quot;</value>
+            <value>&quot;Nokia Speaker Phone, with Caller ID&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Novimex&quot;'>
+            <value>&quot;Novimex Bag Chairs, Adjustable&quot;</value>
+            <value>&quot;Novimex Bag Chairs, Black&quot;</value>
+            <value>&quot;Novimex Bag Chairs, Red&quot;</value>
+            <value>&quot;Novimex Bag Chairs, Set of Two&quot;</value>
+            <value>&quot;Novimex Chairmat, Adjustable&quot;</value>
+            <value>&quot;Novimex Chairmat, Black&quot;</value>
+            <value>&quot;Novimex Chairmat, Red&quot;</value>
+            <value>&quot;Novimex Chairmat, Set of Two&quot;</value>
+            <value>&quot;Novimex Color Coded Labels, 5000 Label Set&quot;</value>
+            <value>&quot;Novimex Color Coded Labels, Adjustable&quot;</value>
+            <value>&quot;Novimex Color Coded Labels, Alphabetical&quot;</value>
+            <value>&quot;Novimex Color Coded Labels, Laser Printer Compatible&quot;</value>
+            <value>&quot;Novimex Executive Leather Armchair, Adjustable&quot;</value>
+            <value>&quot;Novimex Executive Leather Armchair, Black&quot;</value>
+            <value>&quot;Novimex Executive Leather Armchair, Red&quot;</value>
+            <value>&quot;Novimex File Folder Labels, 5000 Label Set&quot;</value>
+            <value>&quot;Novimex File Folder Labels, Adjustable&quot;</value>
+            <value>&quot;Novimex File Folder Labels, Alphabetical&quot;</value>
+            <value>&quot;Novimex File Folder Labels, Laser Printer Compatible&quot;</value>
+            <value>&quot;Novimex Legal Exhibit Labels, 5000 Label Set&quot;</value>
+            <value>&quot;Novimex Legal Exhibit Labels, Adjustable&quot;</value>
+            <value>&quot;Novimex Legal Exhibit Labels, Alphabetical&quot;</value>
+            <value>&quot;Novimex Legal Exhibit Labels, Laser Printer Compatible&quot;</value>
+            <value>&quot;Novimex Removable Labels, 5000 Label Set&quot;</value>
+            <value>&quot;Novimex Removable Labels, Adjustable&quot;</value>
+            <value>&quot;Novimex Removable Labels, Laser Printer Compatible&quot;</value>
+            <value>&quot;Novimex Rocking Chair, Adjustable&quot;</value>
+            <value>&quot;Novimex Rocking Chair, Black&quot;</value>
+            <value>&quot;Novimex Rocking Chair, Red&quot;</value>
+            <value>&quot;Novimex Rocking Chair, Set of Two&quot;</value>
+            <value>&quot;Novimex Round Labels, 5000 Label Set&quot;</value>
+            <value>&quot;Novimex Round Labels, Adjustable&quot;</value>
+            <value>&quot;Novimex Round Labels, Alphabetical&quot;</value>
+            <value>&quot;Novimex Round Labels, Laser Printer Compatible&quot;</value>
+            <value>&quot;Novimex Shipping Labels, 5000 Label Set&quot;</value>
+            <value>&quot;Novimex Shipping Labels, Adjustable&quot;</value>
+            <value>&quot;Novimex Shipping Labels, Alphabetical&quot;</value>
+            <value>&quot;Novimex Shipping Labels, Laser Printer Compatible&quot;</value>
+            <value>&quot;Novimex Steel Folding Chair, Adjustable&quot;</value>
+            <value>&quot;Novimex Steel Folding Chair, Black&quot;</value>
+            <value>&quot;Novimex Steel Folding Chair, Red&quot;</value>
+            <value>&quot;Novimex Steel Folding Chair, Set of Two&quot;</value>
+            <value>&quot;Novimex Swivel Stool, Adjustable&quot;</value>
+            <value>&quot;Novimex Swivel Stool, Black&quot;</value>
+            <value>&quot;Novimex Swivel Stool, Red&quot;</value>
+            <value>&quot;Novimex Swivel Stool, Set of Two&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Office Star&quot;'>
+            <value>&quot;Office Star Bag Chairs, Adjustable&quot;</value>
+            <value>&quot;Office Star Bag Chairs, Black&quot;</value>
+            <value>&quot;Office Star Bag Chairs, Red&quot;</value>
+            <value>&quot;Office Star Bag Chairs, Set of Two&quot;</value>
+            <value>&quot;Office Star Chairmat, Adjustable&quot;</value>
+            <value>&quot;Office Star Chairmat, Black&quot;</value>
+            <value>&quot;Office Star Chairmat, Red&quot;</value>
+            <value>&quot;Office Star Chairmat, Set of Two&quot;</value>
+            <value>&quot;Office Star Executive Leather Armchair, Adjustable&quot;</value>
+            <value>&quot;Office Star Executive Leather Armchair, Black&quot;</value>
+            <value>&quot;Office Star Executive Leather Armchair, Red&quot;</value>
+            <value>&quot;Office Star Rocking Chair, Adjustable&quot;</value>
+            <value>&quot;Office Star Rocking Chair, Black&quot;</value>
+            <value>&quot;Office Star Rocking Chair, Red&quot;</value>
+            <value>&quot;Office Star Rocking Chair, Set of Two&quot;</value>
+            <value>&quot;Office Star Steel Folding Chair, Adjustable&quot;</value>
+            <value>&quot;Office Star Steel Folding Chair, Black&quot;</value>
+            <value>&quot;Office Star Steel Folding Chair, Red&quot;</value>
+            <value>&quot;Office Star Steel Folding Chair, Set of Two&quot;</value>
+            <value>&quot;Office Star Swivel Stool, Adjustable&quot;</value>
+            <value>&quot;Office Star Swivel Stool, Black&quot;</value>
+            <value>&quot;Office Star Swivel Stool, Red&quot;</value>
+            <value>&quot;Office Star Swivel Stool, Set of Two&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Okidata&quot;'>
+            <value>&quot;Okidata Calculator, Durable&quot;</value>
+            <value>&quot;Okidata Calculator, Red&quot;</value>
+            <value>&quot;Okidata Calculator, White&quot;</value>
+            <value>&quot;Okidata Calculator, Wireless&quot;</value>
+            <value>&quot;Okidata Card Printer, Durable&quot;</value>
+            <value>&quot;Okidata Card Printer, Red&quot;</value>
+            <value>&quot;Okidata Card Printer, White&quot;</value>
+            <value>&quot;Okidata Card Printer, Wireless&quot;</value>
+            <value>&quot;Okidata Inkjet, Durable&quot;</value>
+            <value>&quot;Okidata Inkjet, White&quot;</value>
+            <value>&quot;Okidata Inkjet, Wireless&quot;</value>
+            <value>&quot;Okidata Phone, Durable&quot;</value>
+            <value>&quot;Okidata Phone, Red&quot;</value>
+            <value>&quot;Okidata Phone, White&quot;</value>
+            <value>&quot;Okidata Phone, Wireless&quot;</value>
+            <value>&quot;Okidata Printer, Durable&quot;</value>
+            <value>&quot;Okidata Printer, White&quot;</value>
+            <value>&quot;Okidata Printer, Wireless&quot;</value>
+            <value>&quot;Okidata Receipt Printer, Durable&quot;</value>
+            <value>&quot;Okidata Receipt Printer, Red&quot;</value>
+            <value>&quot;Okidata Receipt Printer, White&quot;</value>
+            <value>&quot;Okidata Receipt Printer, Wireless&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Panasonic&quot;'>
+            <value>&quot;Panasonic Calculator, Durable&quot;</value>
+            <value>&quot;Panasonic Calculator, Red&quot;</value>
+            <value>&quot;Panasonic Calculator, White&quot;</value>
+            <value>&quot;Panasonic Calculator, Wireless&quot;</value>
+            <value>&quot;Panasonic Card Printer, Durable&quot;</value>
+            <value>&quot;Panasonic Card Printer, Red&quot;</value>
+            <value>&quot;Panasonic Card Printer, White&quot;</value>
+            <value>&quot;Panasonic Card Printer, Wireless&quot;</value>
+            <value>&quot;Panasonic Inkjet, Red&quot;</value>
+            <value>&quot;Panasonic Inkjet, White&quot;</value>
+            <value>&quot;Panasonic Inkjet, Wireless&quot;</value>
+            <value>&quot;Panasonic Phone, Durable&quot;</value>
+            <value>&quot;Panasonic Phone, Red&quot;</value>
+            <value>&quot;Panasonic Phone, White&quot;</value>
+            <value>&quot;Panasonic Phone, Wireless&quot;</value>
+            <value>&quot;Panasonic Printer, Durable&quot;</value>
+            <value>&quot;Panasonic Printer, Red&quot;</value>
+            <value>&quot;Panasonic Printer, White&quot;</value>
+            <value>&quot;Panasonic Printer, Wireless&quot;</value>
+            <value>&quot;Panasonic Receipt Printer, Durable&quot;</value>
+            <value>&quot;Panasonic Receipt Printer, Red&quot;</value>
+            <value>&quot;Panasonic Receipt Printer, White&quot;</value>
+            <value>&quot;Panasonic Receipt Printer, Wireless&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Rogers&quot;'>
+            <value>&quot;Rogers Box, Blue&quot;</value>
+            <value>&quot;Rogers Box, Industrial&quot;</value>
+            <value>&quot;Rogers Box, Single Width&quot;</value>
+            <value>&quot;Rogers Box, Wire Frame&quot;</value>
+            <value>&quot;Rogers File Cart, Blue&quot;</value>
+            <value>&quot;Rogers File Cart, Industrial&quot;</value>
+            <value>&quot;Rogers File Cart, Single Width&quot;</value>
+            <value>&quot;Rogers Folders, Blue&quot;</value>
+            <value>&quot;Rogers Folders, Industrial&quot;</value>
+            <value>&quot;Rogers Folders, Single Width&quot;</value>
+            <value>&quot;Rogers Folders, Wire Frame&quot;</value>
+            <value>&quot;Rogers Lockers, Blue&quot;</value>
+            <value>&quot;Rogers Lockers, Industrial&quot;</value>
+            <value>&quot;Rogers Lockers, Single Width&quot;</value>
+            <value>&quot;Rogers Lockers, Wire Frame&quot;</value>
+            <value>&quot;Rogers Shelving, Blue&quot;</value>
+            <value>&quot;Rogers Shelving, Industrial&quot;</value>
+            <value>&quot;Rogers Shelving, Single Width&quot;</value>
+            <value>&quot;Rogers Shelving, Wire Frame&quot;</value>
+            <value>&quot;Rogers Trays, Blue&quot;</value>
+            <value>&quot;Rogers Trays, Industrial&quot;</value>
+            <value>&quot;Rogers Trays, Single Width&quot;</value>
+            <value>&quot;Rogers Trays, Wire Frame&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Rubbermaid&quot;'>
+            <value>&quot;Rubbermaid Clock, Black&quot;</value>
+            <value>&quot;Rubbermaid Clock, Duo Pack&quot;</value>
+            <value>&quot;Rubbermaid Clock, Durable&quot;</value>
+            <value>&quot;Rubbermaid Clock, Erganomic&quot;</value>
+            <value>&quot;Rubbermaid Door Stop, Black&quot;</value>
+            <value>&quot;Rubbermaid Door Stop, Duo Pack&quot;</value>
+            <value>&quot;Rubbermaid Door Stop, Durable&quot;</value>
+            <value>&quot;Rubbermaid Door Stop, Erganomic&quot;</value>
+            <value>&quot;Rubbermaid Frame, Black&quot;</value>
+            <value>&quot;Rubbermaid Frame, Duo Pack&quot;</value>
+            <value>&quot;Rubbermaid Frame, Durable&quot;</value>
+            <value>&quot;Rubbermaid Frame, Erganomic&quot;</value>
+            <value>&quot;Rubbermaid Light Bulb, Black&quot;</value>
+            <value>&quot;Rubbermaid Light Bulb, Duo Pack&quot;</value>
+            <value>&quot;Rubbermaid Light Bulb, Durable&quot;</value>
+            <value>&quot;Rubbermaid Light Bulb, Erganomic&quot;</value>
+            <value>&quot;Rubbermaid Photo Frame, Black&quot;</value>
+            <value>&quot;Rubbermaid Photo Frame, Duo Pack&quot;</value>
+            <value>&quot;Rubbermaid Photo Frame, Durable&quot;</value>
+            <value>&quot;Rubbermaid Photo Frame, Erganomic&quot;</value>
+            <value>&quot;Rubbermaid Stacking Tray, Black&quot;</value>
+            <value>&quot;Rubbermaid Stacking Tray, Durable&quot;</value>
+            <value>&quot;Rubbermaid Stacking Tray, Erganomic&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Safco&quot;'>
+            <value>&quot;Safco 3-Shelf Cabinet, Metal&quot;</value>
+            <value>&quot;Safco 3-Shelf Cabinet, Mobile&quot;</value>
+            <value>&quot;Safco 3-Shelf Cabinet, Pine&quot;</value>
+            <value>&quot;Safco 3-Shelf Cabinet, Traditional&quot;</value>
+            <value>&quot;SAFCO Bag Chairs, Adjustable&quot;</value>
+            <value>&quot;SAFCO Bag Chairs, Black&quot;</value>
+            <value>&quot;SAFCO Bag Chairs, Red&quot;</value>
+            <value>&quot;SAFCO Bag Chairs, Set of Two&quot;</value>
+            <value>&quot;SAFCO Chairmat, Adjustable&quot;</value>
+            <value>&quot;SAFCO Chairmat, Black&quot;</value>
+            <value>&quot;SAFCO Chairmat, Red&quot;</value>
+            <value>&quot;SAFCO Chairmat, Set of Two&quot;</value>
+            <value>&quot;Safco Classic Bookcase, Metal&quot;</value>
+            <value>&quot;Safco Classic Bookcase, Mobile&quot;</value>
+            <value>&quot;Safco Classic Bookcase, Pine&quot;</value>
+            <value>&quot;Safco Classic Bookcase, Traditional&quot;</value>
+            <value>&quot;Safco Corner Shelving, Metal&quot;</value>
+            <value>&quot;Safco Corner Shelving, Mobile&quot;</value>
+            <value>&quot;Safco Corner Shelving, Pine&quot;</value>
+            <value>&quot;Safco Corner Shelving, Traditional&quot;</value>
+            <value>&quot;SAFCO Executive Leather Armchair, Adjustable&quot;</value>
+            <value>&quot;SAFCO Executive Leather Armchair, Black&quot;</value>
+            <value>&quot;SAFCO Executive Leather Armchair, Red&quot;</value>
+            <value>&quot;SAFCO Executive Leather Armchair, Set of Two&quot;</value>
+            <value>&quot;Safco Floating Shelf Set, Metal&quot;</value>
+            <value>&quot;Safco Floating Shelf Set, Mobile&quot;</value>
+            <value>&quot;Safco Floating Shelf Set, Pine&quot;</value>
+            <value>&quot;Safco Floating Shelf Set, Traditional&quot;</value>
+            <value>&quot;Safco Library with Doors, Metal&quot;</value>
+            <value>&quot;Safco Library with Doors, Mobile&quot;</value>
+            <value>&quot;Safco Library with Doors, Pine&quot;</value>
+            <value>&quot;Safco Library with Doors, Traditional&quot;</value>
+            <value>&quot;SAFCO Rocking Chair, Adjustable&quot;</value>
+            <value>&quot;SAFCO Rocking Chair, Black&quot;</value>
+            <value>&quot;SAFCO Rocking Chair, Red&quot;</value>
+            <value>&quot;SAFCO Rocking Chair, Set of Two&quot;</value>
+            <value>&quot;Safco Stackable Bookrack, Mobile&quot;</value>
+            <value>&quot;Safco Stackable Bookrack, Pine&quot;</value>
+            <value>&quot;Safco Stackable Bookrack, Traditional&quot;</value>
+            <value>&quot;SAFCO Steel Folding Chair, Adjustable&quot;</value>
+            <value>&quot;SAFCO Steel Folding Chair, Black&quot;</value>
+            <value>&quot;SAFCO Steel Folding Chair, Red&quot;</value>
+            <value>&quot;SAFCO Steel Folding Chair, Set of Two&quot;</value>
+            <value>&quot;SAFCO Swivel Stool, Adjustable&quot;</value>
+            <value>&quot;SAFCO Swivel Stool, Black&quot;</value>
+            <value>&quot;SAFCO Swivel Stool, Red&quot;</value>
+            <value>&quot;SAFCO Swivel Stool, Set of Two&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;SanDisk&quot;'>
+            <value>&quot;SanDisk Cards &amp; Envelopes, 8.5 x 11&quot;</value>
+            <value>&quot;SanDisk Cards &amp; Envelopes, Multicolor&quot;</value>
+            <value>&quot;SanDisk Cards &amp; Envelopes, Premium&quot;</value>
+            <value>&quot;SanDisk Cards &amp; Envelopes, Recycled&quot;</value>
+            <value>&quot;SanDisk Computer Printout Paper, 8.5 x 11&quot;</value>
+            <value>&quot;SanDisk Computer Printout Paper, Multicolor&quot;</value>
+            <value>&quot;SanDisk Computer Printout Paper, Premium&quot;</value>
+            <value>&quot;SanDisk Computer Printout Paper, Recycled&quot;</value>
+            <value>&quot;SanDisk Flash Drive, Bluetooth&quot;</value>
+            <value>&quot;SanDisk Flash Drive, Erganomic&quot;</value>
+            <value>&quot;SanDisk Flash Drive, Programmable&quot;</value>
+            <value>&quot;SanDisk Flash Drive, USB&quot;</value>
+            <value>&quot;SanDisk Keyboard, Bluetooth&quot;</value>
+            <value>&quot;SanDisk Keyboard, Erganomic&quot;</value>
+            <value>&quot;SanDisk Keyboard, Programmable&quot;</value>
+            <value>&quot;SanDisk Keyboard, USB&quot;</value>
+            <value>&quot;SanDisk Memo Slips, 8.5 x 11&quot;</value>
+            <value>&quot;SanDisk Memo Slips, Multicolor&quot;</value>
+            <value>&quot;SanDisk Memo Slips, Premium&quot;</value>
+            <value>&quot;SanDisk Memo Slips, Recycled&quot;</value>
+            <value>&quot;SanDisk Memory Card, Bluetooth&quot;</value>
+            <value>&quot;SanDisk Memory Card, Erganomic&quot;</value>
+            <value>&quot;SanDisk Memory Card, Programmable&quot;</value>
+            <value>&quot;SanDisk Memory Card, USB&quot;</value>
+            <value>&quot;SanDisk Message Books, 8.5 x 11&quot;</value>
+            <value>&quot;SanDisk Message Books, Multicolor&quot;</value>
+            <value>&quot;SanDisk Message Books, Premium&quot;</value>
+            <value>&quot;SanDisk Message Books, Recycled&quot;</value>
+            <value>&quot;SanDisk Mouse, Bluetooth&quot;</value>
+            <value>&quot;SanDisk Mouse, Erganomic&quot;</value>
+            <value>&quot;SanDisk Mouse, Programmable&quot;</value>
+            <value>&quot;SanDisk Mouse, USB&quot;</value>
+            <value>&quot;SanDisk Note Cards, 8.5 x 11&quot;</value>
+            <value>&quot;SanDisk Note Cards, Multicolor&quot;</value>
+            <value>&quot;SanDisk Note Cards, Premium&quot;</value>
+            <value>&quot;SanDisk Numeric Keypad, Bluetooth&quot;</value>
+            <value>&quot;SanDisk Numeric Keypad, Erganomic&quot;</value>
+            <value>&quot;SanDisk Numeric Keypad, USB&quot;</value>
+            <value>&quot;SanDisk Parchment Paper, 8.5 x 11&quot;</value>
+            <value>&quot;SanDisk Parchment Paper, Multicolor&quot;</value>
+            <value>&quot;SanDisk Parchment Paper, Premium&quot;</value>
+            <value>&quot;SanDisk Parchment Paper, Recycled&quot;</value>
+            <value>&quot;SanDisk Router, Bluetooth&quot;</value>
+            <value>&quot;SanDisk Router, Erganomic&quot;</value>
+            <value>&quot;SanDisk Router, Programmable&quot;</value>
+            <value>&quot;SanDisk Router, USB&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Sanford&quot;'>
+            <value>&quot;Sanford Canvas, Blue&quot;</value>
+            <value>&quot;Sanford Canvas, Easy-Erase&quot;</value>
+            <value>&quot;Sanford Canvas, Fluorescent&quot;</value>
+            <value>&quot;Sanford Canvas, Water Color&quot;</value>
+            <value>&quot;Sanford Highlighters, Blue&quot;</value>
+            <value>&quot;Sanford Highlighters, Easy-Erase&quot;</value>
+            <value>&quot;Sanford Highlighters, Fluorescent&quot;</value>
+            <value>&quot;Sanford Highlighters, Water Color&quot;</value>
+            <value>&quot;Sanford Markers, Blue&quot;</value>
+            <value>&quot;Sanford Markers, Easy-Erase&quot;</value>
+            <value>&quot;Sanford Markers, Fluorescent&quot;</value>
+            <value>&quot;Sanford Markers, Water Color&quot;</value>
+            <value>&quot;Sanford Pencil Sharpener, Easy-Erase&quot;</value>
+            <value>&quot;Sanford Pencil Sharpener, Fluorescent&quot;</value>
+            <value>&quot;Sanford Pencil Sharpener, Water Color&quot;</value>
+            <value>&quot;Sanford Pens, Blue&quot;</value>
+            <value>&quot;Sanford Pens, Easy-Erase&quot;</value>
+            <value>&quot;Sanford Pens, Fluorescent&quot;</value>
+            <value>&quot;Sanford Pens, Water Color&quot;</value>
+            <value>&quot;Sanford Sketch Pad, Blue&quot;</value>
+            <value>&quot;Sanford Sketch Pad, Easy-Erase&quot;</value>
+            <value>&quot;Sanford Sketch Pad, Fluorescent&quot;</value>
+            <value>&quot;Sanford Sketch Pad, Water Color&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Sauder&quot;'>
+            <value>&quot;Sauder 3-Shelf Cabinet, Metal&quot;</value>
+            <value>&quot;Sauder 3-Shelf Cabinet, Mobile&quot;</value>
+            <value>&quot;Sauder 3-Shelf Cabinet, Pine&quot;</value>
+            <value>&quot;Sauder 3-Shelf Cabinet, Traditional&quot;</value>
+            <value>&quot;Sauder Classic Bookcase, Metal&quot;</value>
+            <value>&quot;Sauder Classic Bookcase, Mobile&quot;</value>
+            <value>&quot;Sauder Classic Bookcase, Pine&quot;</value>
+            <value>&quot;Sauder Classic Bookcase, Traditional&quot;</value>
+            <value>&quot;Sauder Corner Shelving, Metal&quot;</value>
+            <value>&quot;Sauder Corner Shelving, Mobile&quot;</value>
+            <value>&quot;Sauder Corner Shelving, Pine&quot;</value>
+            <value>&quot;Sauder Corner Shelving, Traditional&quot;</value>
+            <value>&quot;Sauder Floating Shelf Set, Metal&quot;</value>
+            <value>&quot;Sauder Floating Shelf Set, Mobile&quot;</value>
+            <value>&quot;Sauder Floating Shelf Set, Pine&quot;</value>
+            <value>&quot;Sauder Floating Shelf Set, Traditional&quot;</value>
+            <value>&quot;Sauder Library with Doors, Metal&quot;</value>
+            <value>&quot;Sauder Library with Doors, Mobile&quot;</value>
+            <value>&quot;Sauder Library with Doors, Pine&quot;</value>
+            <value>&quot;Sauder Library with Doors, Traditional&quot;</value>
+            <value>&quot;Sauder Stackable Bookrack, Mobile&quot;</value>
+            <value>&quot;Sauder Stackable Bookrack, Pine&quot;</value>
+            <value>&quot;Sauder Stackable Bookrack, Traditional&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Sharp&quot;'>
+            <value>&quot;Sharp Copy Machine, Color&quot;</value>
+            <value>&quot;Sharp Copy Machine, High-Speed&quot;</value>
+            <value>&quot;Sharp Copy Machine, Laser&quot;</value>
+            <value>&quot;Sharp Fax and Copier, Color&quot;</value>
+            <value>&quot;Sharp Fax and Copier, Digital&quot;</value>
+            <value>&quot;Sharp Fax and Copier, High-Speed&quot;</value>
+            <value>&quot;Sharp Fax and Copier, Laser&quot;</value>
+            <value>&quot;Sharp Fax Machine, Color&quot;</value>
+            <value>&quot;Sharp Fax Machine, Digital&quot;</value>
+            <value>&quot;Sharp Fax Machine, High-Speed&quot;</value>
+            <value>&quot;Sharp Fax Machine, Laser&quot;</value>
+            <value>&quot;Sharp Ink, Color&quot;</value>
+            <value>&quot;Sharp Ink, Digital&quot;</value>
+            <value>&quot;Sharp Ink, High-Speed&quot;</value>
+            <value>&quot;Sharp Ink, Laser&quot;</value>
+            <value>&quot;Sharp Personal Copier, Color&quot;</value>
+            <value>&quot;Sharp Personal Copier, Digital&quot;</value>
+            <value>&quot;Sharp Personal Copier, High-Speed&quot;</value>
+            <value>&quot;Sharp Personal Copier, Laser&quot;</value>
+            <value>&quot;Sharp Wireless Fax, Color&quot;</value>
+            <value>&quot;Sharp Wireless Fax, Digital&quot;</value>
+            <value>&quot;Sharp Wireless Fax, High-Speed&quot;</value>
+            <value>&quot;Sharp Wireless Fax, Laser&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Smead&quot;'>
+            <value>&quot;Smead Box, Blue&quot;</value>
+            <value>&quot;Smead Box, Industrial&quot;</value>
+            <value>&quot;Smead Box, Single Width&quot;</value>
+            <value>&quot;Smead Box, Wire Frame&quot;</value>
+            <value>&quot;Smead Color Coded Labels, 5000 Label Set&quot;</value>
+            <value>&quot;Smead Color Coded Labels, Adjustable&quot;</value>
+            <value>&quot;Smead Color Coded Labels, Alphabetical&quot;</value>
+            <value>&quot;Smead Color Coded Labels, Laser Printer Compatible&quot;</value>
+            <value>&quot;Smead File Cart, Blue&quot;</value>
+            <value>&quot;Smead File Cart, Industrial&quot;</value>
+            <value>&quot;Smead File Cart, Single Width&quot;</value>
+            <value>&quot;Smead File Folder Labels, 5000 Label Set&quot;</value>
+            <value>&quot;Smead File Folder Labels, Adjustable&quot;</value>
+            <value>&quot;Smead File Folder Labels, Alphabetical&quot;</value>
+            <value>&quot;Smead File Folder Labels, Laser Printer Compatible&quot;</value>
+            <value>&quot;Smead Folders, Blue&quot;</value>
+            <value>&quot;Smead Folders, Industrial&quot;</value>
+            <value>&quot;Smead Folders, Single Width&quot;</value>
+            <value>&quot;Smead Folders, Wire Frame&quot;</value>
+            <value>&quot;Smead Legal Exhibit Labels, 5000 Label Set&quot;</value>
+            <value>&quot;Smead Legal Exhibit Labels, Adjustable&quot;</value>
+            <value>&quot;Smead Legal Exhibit Labels, Alphabetical&quot;</value>
+            <value>&quot;Smead Legal Exhibit Labels, Laser Printer Compatible&quot;</value>
+            <value>&quot;Smead Lockers, Blue&quot;</value>
+            <value>&quot;Smead Lockers, Industrial&quot;</value>
+            <value>&quot;Smead Lockers, Single Width&quot;</value>
+            <value>&quot;Smead Lockers, Wire Frame&quot;</value>
+            <value>&quot;Smead Removable Labels, 5000 Label Set&quot;</value>
+            <value>&quot;Smead Removable Labels, Adjustable&quot;</value>
+            <value>&quot;Smead Removable Labels, Laser Printer Compatible&quot;</value>
+            <value>&quot;Smead Round Labels, 5000 Label Set&quot;</value>
+            <value>&quot;Smead Round Labels, Adjustable&quot;</value>
+            <value>&quot;Smead Round Labels, Alphabetical&quot;</value>
+            <value>&quot;Smead Round Labels, Laser Printer Compatible&quot;</value>
+            <value>&quot;Smead Shelving, Blue&quot;</value>
+            <value>&quot;Smead Shelving, Industrial&quot;</value>
+            <value>&quot;Smead Shelving, Single Width&quot;</value>
+            <value>&quot;Smead Shelving, Wire Frame&quot;</value>
+            <value>&quot;Smead Shipping Labels, 5000 Label Set&quot;</value>
+            <value>&quot;Smead Shipping Labels, Adjustable&quot;</value>
+            <value>&quot;Smead Shipping Labels, Alphabetical&quot;</value>
+            <value>&quot;Smead Shipping Labels, Laser Printer Compatible&quot;</value>
+            <value>&quot;Smead Trays, Blue&quot;</value>
+            <value>&quot;Smead Trays, Industrial&quot;</value>
+            <value>&quot;Smead Trays, Single Width&quot;</value>
+            <value>&quot;Smead Trays, Wire Frame&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Stanley&quot;'>
+            <value>&quot;Stanley Canvas, Blue&quot;</value>
+            <value>&quot;Stanley Canvas, Easy-Erase&quot;</value>
+            <value>&quot;Stanley Canvas, Fluorescent&quot;</value>
+            <value>&quot;Stanley Canvas, Water Color&quot;</value>
+            <value>&quot;Stanley Highlighters, Blue&quot;</value>
+            <value>&quot;Stanley Highlighters, Easy-Erase&quot;</value>
+            <value>&quot;Stanley Highlighters, Fluorescent&quot;</value>
+            <value>&quot;Stanley Highlighters, Water Color&quot;</value>
+            <value>&quot;Stanley Markers, Blue&quot;</value>
+            <value>&quot;Stanley Markers, Easy-Erase&quot;</value>
+            <value>&quot;Stanley Markers, Fluorescent&quot;</value>
+            <value>&quot;Stanley Markers, Water Color&quot;</value>
+            <value>&quot;Stanley Pencil Sharpener, Easy-Erase&quot;</value>
+            <value>&quot;Stanley Pencil Sharpener, Fluorescent&quot;</value>
+            <value>&quot;Stanley Pencil Sharpener, Water Color&quot;</value>
+            <value>&quot;Stanley Pens, Blue&quot;</value>
+            <value>&quot;Stanley Pens, Easy-Erase&quot;</value>
+            <value>&quot;Stanley Pens, Fluorescent&quot;</value>
+            <value>&quot;Stanley Pens, Water Color&quot;</value>
+            <value>&quot;Stanley Sketch Pad, Blue&quot;</value>
+            <value>&quot;Stanley Sketch Pad, Easy-Erase&quot;</value>
+            <value>&quot;Stanley Sketch Pad, Fluorescent&quot;</value>
+            <value>&quot;Stanley Sketch Pad, Water Color&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;StarTech&quot;'>
+            <value>&quot;StarTech Calculator, Durable&quot;</value>
+            <value>&quot;StarTech Calculator, Red&quot;</value>
+            <value>&quot;StarTech Calculator, White&quot;</value>
+            <value>&quot;StarTech Calculator, Wireless&quot;</value>
+            <value>&quot;StarTech Card Printer, Durable&quot;</value>
+            <value>&quot;StarTech Card Printer, Red&quot;</value>
+            <value>&quot;StarTech Card Printer, White&quot;</value>
+            <value>&quot;StarTech Card Printer, Wireless&quot;</value>
+            <value>&quot;StarTech Inkjet, Durable&quot;</value>
+            <value>&quot;StarTech Inkjet, White&quot;</value>
+            <value>&quot;StarTech Inkjet, Wireless&quot;</value>
+            <value>&quot;StarTech Phone, Durable&quot;</value>
+            <value>&quot;StarTech Phone, White&quot;</value>
+            <value>&quot;StarTech Phone, Wireless&quot;</value>
+            <value>&quot;StarTech Printer, Durable&quot;</value>
+            <value>&quot;StarTech Printer, Red&quot;</value>
+            <value>&quot;StarTech Printer, White&quot;</value>
+            <value>&quot;StarTech Printer, Wireless&quot;</value>
+            <value>&quot;StarTech Receipt Printer, Durable&quot;</value>
+            <value>&quot;StarTech Receipt Printer, Red&quot;</value>
+            <value>&quot;StarTech Receipt Printer, White&quot;</value>
+            <value>&quot;StarTech Receipt Printer, Wireless&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Stiletto&quot;'>
+            <value>&quot;Stiletto Box Cutter, Easy Grip&quot;</value>
+            <value>&quot;Stiletto Box Cutter, High Speed&quot;</value>
+            <value>&quot;Stiletto Box Cutter, Serrated&quot;</value>
+            <value>&quot;Stiletto Box Cutter, Steel&quot;</value>
+            <value>&quot;Stiletto Letter Opener, Easy Grip&quot;</value>
+            <value>&quot;Stiletto Letter Opener, High Speed&quot;</value>
+            <value>&quot;Stiletto Letter Opener, Steel&quot;</value>
+            <value>&quot;Stiletto Ruler, Easy Grip&quot;</value>
+            <value>&quot;Stiletto Ruler, High Speed&quot;</value>
+            <value>&quot;Stiletto Ruler, Serrated&quot;</value>
+            <value>&quot;Stiletto Ruler, Steel&quot;</value>
+            <value>&quot;Stiletto Scissors, Easy Grip&quot;</value>
+            <value>&quot;Stiletto Scissors, High Speed&quot;</value>
+            <value>&quot;Stiletto Scissors, Serrated&quot;</value>
+            <value>&quot;Stiletto Scissors, Steel&quot;</value>
+            <value>&quot;Stiletto Shears, Easy Grip&quot;</value>
+            <value>&quot;Stiletto Shears, High Speed&quot;</value>
+            <value>&quot;Stiletto Shears, Serrated&quot;</value>
+            <value>&quot;Stiletto Shears, Steel&quot;</value>
+            <value>&quot;Stiletto Trimmer, Easy Grip&quot;</value>
+            <value>&quot;Stiletto Trimmer, High Speed&quot;</value>
+            <value>&quot;Stiletto Trimmer, Serrated&quot;</value>
+            <value>&quot;Stiletto Trimmer, Steel&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Stockwell&quot;'>
+            <value>&quot;Stockwell Clamps, 12 Pack&quot;</value>
+            <value>&quot;Stockwell Clamps, Assorted Sizes&quot;</value>
+            <value>&quot;Stockwell Clamps, Bulk Pack&quot;</value>
+            <value>&quot;Stockwell Clamps, Metal&quot;</value>
+            <value>&quot;Stockwell Paper Clips, Assorted Sizes&quot;</value>
+            <value>&quot;Stockwell Paper Clips, Bulk Pack&quot;</value>
+            <value>&quot;Stockwell Paper Clips, Metal&quot;</value>
+            <value>&quot;Stockwell Push Pins, 12 Pack&quot;</value>
+            <value>&quot;Stockwell Push Pins, Assorted Sizes&quot;</value>
+            <value>&quot;Stockwell Push Pins, Bulk Pack&quot;</value>
+            <value>&quot;Stockwell Push Pins, Metal&quot;</value>
+            <value>&quot;Stockwell Rubber Bands, 12 Pack&quot;</value>
+            <value>&quot;Stockwell Rubber Bands, Assorted Sizes&quot;</value>
+            <value>&quot;Stockwell Rubber Bands, Bulk Pack&quot;</value>
+            <value>&quot;Stockwell Rubber Bands, Metal&quot;</value>
+            <value>&quot;Stockwell Staples, 12 Pack&quot;</value>
+            <value>&quot;Stockwell Staples, Assorted Sizes&quot;</value>
+            <value>&quot;Stockwell Staples, Bulk Pack&quot;</value>
+            <value>&quot;Stockwell Staples, Metal&quot;</value>
+            <value>&quot;Stockwell Thumb Tacks, 12 Pack&quot;</value>
+            <value>&quot;Stockwell Thumb Tacks, Assorted Sizes&quot;</value>
+            <value>&quot;Stockwell Thumb Tacks, Bulk Pack&quot;</value>
+            <value>&quot;Stockwell Thumb Tacks, Metal&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Tenex&quot;'>
+            <value>&quot;Tenex Box, Blue&quot;</value>
+            <value>&quot;Tenex Box, Industrial&quot;</value>
+            <value>&quot;Tenex Box, Single Width&quot;</value>
+            <value>&quot;Tenex Box, Wire Frame&quot;</value>
+            <value>&quot;Tenex Clock, Black&quot;</value>
+            <value>&quot;Tenex Clock, Duo Pack&quot;</value>
+            <value>&quot;Tenex Clock, Durable&quot;</value>
+            <value>&quot;Tenex Clock, Erganomic&quot;</value>
+            <value>&quot;Tenex Door Stop, Black&quot;</value>
+            <value>&quot;Tenex Door Stop, Duo Pack&quot;</value>
+            <value>&quot;Tenex Door Stop, Durable&quot;</value>
+            <value>&quot;Tenex Door Stop, Erganomic&quot;</value>
+            <value>&quot;Tenex File Cart, Blue&quot;</value>
+            <value>&quot;Tenex File Cart, Industrial&quot;</value>
+            <value>&quot;Tenex File Cart, Single Width&quot;</value>
+            <value>&quot;Tenex Folders, Blue&quot;</value>
+            <value>&quot;Tenex Folders, Industrial&quot;</value>
+            <value>&quot;Tenex Folders, Single Width&quot;</value>
+            <value>&quot;Tenex Folders, Wire Frame&quot;</value>
+            <value>&quot;Tenex Frame, Black&quot;</value>
+            <value>&quot;Tenex Frame, Duo Pack&quot;</value>
+            <value>&quot;Tenex Frame, Durable&quot;</value>
+            <value>&quot;Tenex Frame, Erganomic&quot;</value>
+            <value>&quot;Tenex Light Bulb, Black&quot;</value>
+            <value>&quot;Tenex Light Bulb, Duo Pack&quot;</value>
+            <value>&quot;Tenex Light Bulb, Durable&quot;</value>
+            <value>&quot;Tenex Light Bulb, Erganomic&quot;</value>
+            <value>&quot;Tenex Lockers, Blue&quot;</value>
+            <value>&quot;Tenex Lockers, Industrial&quot;</value>
+            <value>&quot;Tenex Lockers, Single Width&quot;</value>
+            <value>&quot;Tenex Lockers, Wire Frame&quot;</value>
+            <value>&quot;Tenex Photo Frame, Black&quot;</value>
+            <value>&quot;Tenex Photo Frame, Duo Pack&quot;</value>
+            <value>&quot;Tenex Photo Frame, Durable&quot;</value>
+            <value>&quot;Tenex Photo Frame, Erganomic&quot;</value>
+            <value>&quot;Tenex Shelving, Blue&quot;</value>
+            <value>&quot;Tenex Shelving, Industrial&quot;</value>
+            <value>&quot;Tenex Shelving, Single Width&quot;</value>
+            <value>&quot;Tenex Shelving, Wire Frame&quot;</value>
+            <value>&quot;Tenex Stacking Tray, Black&quot;</value>
+            <value>&quot;Tenex Stacking Tray, Durable&quot;</value>
+            <value>&quot;Tenex Stacking Tray, Erganomic&quot;</value>
+            <value>&quot;Tenex Trays, Blue&quot;</value>
+            <value>&quot;Tenex Trays, Industrial&quot;</value>
+            <value>&quot;Tenex Trays, Single Width&quot;</value>
+            <value>&quot;Tenex Trays, Wire Frame&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Wilson Jones&quot;'>
+            <value>&quot;Wilson Jones 3-Hole Punch, Clear&quot;</value>
+            <value>&quot;Wilson Jones 3-Hole Punch, Durable&quot;</value>
+            <value>&quot;Wilson Jones 3-Hole Punch, Economy&quot;</value>
+            <value>&quot;Wilson Jones 3-Hole Punch, Recycled&quot;</value>
+            <value>&quot;Wilson Jones Binder Covers, Clear&quot;</value>
+            <value>&quot;Wilson Jones Binder Covers, Durable&quot;</value>
+            <value>&quot;Wilson Jones Binder Covers, Economy&quot;</value>
+            <value>&quot;Wilson Jones Binder Covers, Recycled&quot;</value>
+            <value>&quot;Wilson Jones Binder, Clear&quot;</value>
+            <value>&quot;Wilson Jones Binder, Durable&quot;</value>
+            <value>&quot;Wilson Jones Binder, Economy&quot;</value>
+            <value>&quot;Wilson Jones Binder, Recycled&quot;</value>
+            <value>&quot;Wilson Jones Binding Machine, Clear&quot;</value>
+            <value>&quot;Wilson Jones Binding Machine, Durable&quot;</value>
+            <value>&quot;Wilson Jones Binding Machine, Economy&quot;</value>
+            <value>&quot;Wilson Jones Binding Machine, Recycled&quot;</value>
+            <value>&quot;Wilson Jones Hole Reinforcements, Clear&quot;</value>
+            <value>&quot;Wilson Jones Hole Reinforcements, Durable&quot;</value>
+            <value>&quot;Wilson Jones Hole Reinforcements, Economy&quot;</value>
+            <value>&quot;Wilson Jones Hole Reinforcements, Recycled&quot;</value>
+            <value>&quot;Wilson Jones Index Tab, Clear&quot;</value>
+            <value>&quot;Wilson Jones Index Tab, Durable&quot;</value>
+            <value>&quot;Wilson Jones Index Tab, Economy&quot;</value>
+            <value>&quot;Wilson Jones Index Tab, Recycled&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Xerox&quot;'>
+            <value>&quot;Xerox Cards &amp; Envelopes, 8.5 x 11&quot;</value>
+            <value>&quot;Xerox Cards &amp; Envelopes, Premium&quot;</value>
+            <value>&quot;Xerox Cards &amp; Envelopes, Recycled&quot;</value>
+            <value>&quot;Xerox Computer Printout Paper, 8.5 x 11&quot;</value>
+            <value>&quot;Xerox Computer Printout Paper, Multicolor&quot;</value>
+            <value>&quot;Xerox Computer Printout Paper, Premium&quot;</value>
+            <value>&quot;Xerox Computer Printout Paper, Recycled&quot;</value>
+            <value>&quot;Xerox Memo Slips, 8.5 x 11&quot;</value>
+            <value>&quot;Xerox Memo Slips, Multicolor&quot;</value>
+            <value>&quot;Xerox Memo Slips, Premium&quot;</value>
+            <value>&quot;Xerox Memo Slips, Recycled&quot;</value>
+            <value>&quot;Xerox Message Books, 8.5 x 11&quot;</value>
+            <value>&quot;Xerox Message Books, Multicolor&quot;</value>
+            <value>&quot;Xerox Message Books, Premium&quot;</value>
+            <value>&quot;Xerox Message Books, Recycled&quot;</value>
+            <value>&quot;Xerox Note Cards, 8.5 x 11&quot;</value>
+            <value>&quot;Xerox Note Cards, Multicolor&quot;</value>
+            <value>&quot;Xerox Note Cards, Premium&quot;</value>
+            <value>&quot;Xerox Note Cards, Recycled&quot;</value>
+            <value>&quot;Xerox Parchment Paper, 8.5 x 11&quot;</value>
+            <value>&quot;Xerox Parchment Paper, Multicolor&quot;</value>
+            <value>&quot;Xerox Parchment Paper, Premium&quot;</value>
+            <value>&quot;Xerox Parchment Paper, Recycled&quot;</value>
+          </bin>
+        </calculation>
+      </column>
+      <column caption='제품 Id' datatype='string' hidden='true' name='[제품 ID]' role='dimension' type='nominal' />
+      <column datatype='string' name='[제품 이름]' role='dimension' type='nominal' />
+      <column caption='주문 Id (반품 정리)' datatype='string' hidden='true' name='[주문 ID (반품 정리)]' role='dimension' type='nominal' />
+      <column caption='주문 Id' datatype='string' name='[주문 ID]' role='dimension' type='nominal' />
+      <column datatype='string' hidden='true' name='[지역 (인력)]' role='dimension' type='nominal' />
+      <column aggregate-role-from='[국가/지역]' datatype='string' name='[지역]' role='dimension' type='nominal' />
+      <column datatype='real' default-format='p0%' name='[할인율]' role='measure' type='quantitative' />
+      <column caption='행 Id' datatype='integer' hidden='true' name='[행 ID]' role='dimension' type='ordinal' />
+      <group caption='수익 기준 상위 고객' name='[수익 기준 상위 고객]' name-style='unqualified' user:ui-builder='filter-group'>
+        <groupfilter count='[Parameters].[Parameter 2]' end='top' function='end' units='records' user:ui-marker='end' user:ui-top-by-field='true'>
+          <groupfilter direction='DESC' expression='SUM([수익])' function='order' user:ui-marker='order'>
+            <groupfilter function='level-members' level='[고객 이름]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </groupfilter>
+        </groupfilter>
+      </group>
+      <drill-paths>
+        <drill-path name='위치'>
+          <field>[지역]</field>
+          <field>[국가/지역]</field>
+          <field>[시/도]</field>
+          <field>[도시]</field>
+        </drill-path>
+        <drill-path name='제품'>
+          <field>[범주]</field>
+          <field>[하위 범주]</field>
+          <field>[제조업체]</field>
+          <field>[제품 이름]</field>
+        </drill-path>
+      </drill-paths>
+      <_.fcp.SchemaViewerObjectModel.true...folders-common>
+        <folder name='고객' />
+        <folder name='주문' />
+      </_.fcp.SchemaViewerObjectModel.true...folders-common>
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-aliased-fields='true' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <datasource-dependencies datasource='Parameters'>
+        <column caption='수익 구간차원 크기' datatype='integer' name='[Parameter 1]' param-domain-type='range' role='measure' type='quantitative' value='200'>
+          <calculation class='tableau' formula='200' />
+          <range granularity='50' max='200' min='50' />
+        </column>
+        <column caption='상위 고객' datatype='integer' name='[Parameter 2]' param-domain-type='range' role='measure' type='quantitative' value='5'>
+          <calculation class='tableau' formula='5' />
+          <range granularity='5' max='20' min='5' />
+        </column>
+      </datasource-dependencies>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='반품 정리' id='반품 정리_DB70CC478BE5411BBD5C57419573B2EB'>
+            <properties context=''>
+              <relation connection='대형슈퍼 - 샘플leaf' name='반품 정리' table='[&apos;반품 정리$&apos;]' type='table'>
+                <columns gridOrigin='A1:B787:no:A1:B787:0' header='yes' outcome='6'>
+                  <column datatype='string' name='주문 ID' ordinal='0' />
+                  <column datatype='string' name='반품' ordinal='1' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+          <object caption='인력' id='인력_3FC1D36563E34CDA8707C24EFAFD74ED'>
+            <properties context=''>
+              <relation connection='대형슈퍼 - 샘플leaf' name='인력' table='[인력$]' type='table'>
+                <columns gridOrigin='A1:B5:no:A1:B5:0' header='yes' outcome='6'>
+                  <column datatype='string' name='사람' ordinal='0' />
+                  <column datatype='string' name='지역' ordinal='1' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+          <object caption='주문' id='주문_97625591CA484D7B94DC4BD2916A9746'>
+            <properties context=''>
+              <relation connection='대형슈퍼 - 샘플leaf' name='주문' table='[주문$]' type='table'>
+                <columns gridOrigin='A1:T10934:no:A1:T10934:0' header='yes' outcome='6'>
+                  <column datatype='integer' name='행 ID' ordinal='0' />
+                  <column datatype='string' name='주문 ID' ordinal='1' />
+                  <column datatype='date' name='주문 날짜' ordinal='2' />
+                  <column datatype='date' name='배송 날짜' ordinal='3' />
+                  <column datatype='string' name='배송 형태' ordinal='4' />
+                  <column datatype='string' name='고객 ID' ordinal='5' />
+                  <column datatype='string' name='고객 이름' ordinal='6' />
+                  <column datatype='string' name='세그먼트' ordinal='7' />
+                  <column datatype='string' name='도시' ordinal='8' />
+                  <column datatype='string' name='시/도' ordinal='9' />
+                  <column datatype='string' name='국가/지역' ordinal='10' />
+                  <column datatype='string' name='지역' ordinal='11' />
+                  <column datatype='string' name='제품 ID' ordinal='12' />
+                  <column datatype='string' name='범주' ordinal='13' />
+                  <column datatype='string' name='하위 범주' ordinal='14' />
+                  <column datatype='string' name='제품 이름' ordinal='15' />
+                  <column datatype='real' name='매출' ordinal='16' />
+                  <column datatype='integer' name='수량' ordinal='17' />
+                  <column datatype='real' name='할인율' ordinal='18' />
+                  <column datatype='real' name='수익' ordinal='19' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+        <relationships>
+          <relationship>
+            <expression op='='>
+              <expression op='[주문 ID]' />
+              <expression op='[주문 ID (반품 정리)]' />
+            </expression>
+            <first-end-point object-id='주문_97625591CA484D7B94DC4BD2916A9746' />
+            <second-end-point object-id='반품 정리_DB70CC478BE5411BBD5C57419573B2EB' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[지역]' />
+              <expression op='[지역 (인력)]' />
+            </expression>
+            <first-end-point object-id='주문_97625591CA484D7B94DC4BD2916A9746' />
+            <second-end-point object-id='인력_3FC1D36563E34CDA8707C24EFAFD74ED' />
+          </relationship>
+        </relationships>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='시트 1'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>지역별 매출과 할인율은 어떻게 다른가?&#10;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource name='슈퍼스토어 - 샘플' />
+          </datasources>
+          <datasource-dependencies datasource='슈퍼스토어 - 샘플'>
+            <column-instance column='[할인율]' derivation='Avg' name='[avg:할인율:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[주문 ID]' derivation='CountD' name='[ctd:주문 ID:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[국가/지역]' derivation='None' name='[none:국가/지역:nk]' pivot='key' type='nominal' />
+            <column-instance column='[세그먼트]' derivation='None' name='[none:세그먼트:nk]' pivot='key' type='nominal' />
+            <column-instance column='[매출]' derivation='Sum' name='[sum:매출:qk]' pivot='key' type='quantitative' />
+            <column datatype='string' name='[국가/지역]' role='dimension' semantic-role='[Country].[Name]' type='nominal' />
+            <column datatype='real' default-format='C1042%' name='[매출]' role='measure' type='quantitative' />
+            <column datatype='string' name='[세그먼트]' role='dimension' type='nominal' />
+            <column caption='주문 Id' datatype='string' name='[주문 ID]' role='dimension' type='nominal' />
+            <column datatype='real' default-format='p0%' name='[할인율]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[슈퍼스토어 - 샘플].[none:국가/지역:nk]' />
+              <shape column='[슈퍼스토어 - 샘플].[none:세그먼트:nk]' />
+              <text column='[슈퍼스토어 - 샘플].[none:세그먼트:nk]' />
+              <text column='[슈퍼스토어 - 샘플].[none:국가/지역:nk]' />
+              <text column='[슈퍼스토어 - 샘플].[ctd:주문 ID:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[슈퍼스토어 - 샘플].[avg:할인율:qk]</rows>
+        <cols>[슈퍼스토어 - 샘플].[sum:매출:qk]</cols>
+      </table>
+      <simple-id uuid='{B736D9B0-308F-4D50-B1DA-9E0F51EBB137}' />
+    </worksheet>
+  </worksheets>
+  <windows source-height='30'>
+    <window class='worksheet' maximized='true' name='시트 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[슈퍼스토어 - 샘플].[none:국가/지역:nk]' type='color' />
+            <card pane-specification-id='0' param='[슈퍼스토어 - 샘플].[none:세그먼트:nk]' type='shape' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[슈퍼스토어 - 샘플].[none:국가/지역:nk]</field>
+            <field>[슈퍼스토어 - 샘플].[none:세그먼트:nk]</field>
+            <field>[슈퍼스토어 - 샘플].[none:주문 ID:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{369F008B-6B35-4D69-B497-FB568B798191}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='시트 1' width='192'>
+      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
+      8K4G/z+4ZBt469kNfgAAAABJRU5ErkJggg==
+    </thumbnail>
+  </thumbnails>
+</workbook>
